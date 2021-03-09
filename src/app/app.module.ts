@@ -11,6 +11,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
+import { VaccinationComponent } from './components/vaccination/vaccination.component';
+import { GeneralAppointmentComponent } from './components/general-appointment/general-appointment.component';
 
 
 
@@ -22,7 +24,9 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     CountriesComponent,
     HomeComponent,
     NavbarComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    VaccinationComponent,
+    GeneralAppointmentComponent
   ],
   imports: [
     BrowserModule,

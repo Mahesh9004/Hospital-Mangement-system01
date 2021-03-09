@@ -1,0 +1,53 @@
+<body ng-app="" (ngSubmit)="onSubmit()">
+    <h1>Questionnaire</h1>
+<form>
+    <div class="custom-control custom-radio">
+        Do you have headache?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Do you have fever?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Do you have cold?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Do you have BP problems?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Do you have diabetes?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Are you on any prescription?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Do you have any medical history?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Do you have any respiratory problems?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>
+     <div class="custom-control custom-radio">
+        Do you have history of foreign travelling?
+        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
+        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
+     </div>     
+     <button type="submit" class="btn btn-success btn-block" (click)="onSubmit()">Submit</button>
+  </form>
+</body>
+       
+   

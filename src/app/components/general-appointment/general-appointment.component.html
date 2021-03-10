@@ -1,53 +1,98 @@
 <body ng-app="" (ngSubmit)="onSubmit()">
     <h1>Questionnaire</h1>
 <form>
-    <div class="custom-control custom-radio">
-        Do you have headache?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
-        Do you have fever?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
-        Do you have cold?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
-        Do you have BP problems?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
-        Do you have diabetes?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
-        Are you on any prescription?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
-        Do you have any medical history?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
-        Do you have any respiratory problems?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>
-     <div class="custom-control custom-radio">
+    <table>
+        <tr>
+         <td>
+             Do you have headache?
+         </td>
+         <td>
+             <input type="radio" class="custom-control-input" value="yes" name="trueValue1" ngModel>Yes
+             <input type="radio" class="custom-control-input" value="no" name="trueValue1" ngModel>No
+         </td>
+        </tr>
+        <tr>
+            <td>
+                Do you have fever?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue2" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue2" ngModel>No
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Do you have cold?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue3" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue3" ngModel>No
+            </td>
+           </tr>
+           <tr>
+            <td>
+                Do you have BP problems?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue4" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue4" ngModel>No
+            </td>
+           </tr>
+           <tr>
+            <td>
+                Do you have diabetes?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue5" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue5" ngModel>No
+            </td>
+           </tr>
+           <tr>
+            <td>
+                Are you on any prescription?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue6" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue6" ngModel>No
+            </td>
+           </tr>
+           <tr>
+            <td>
+                Do you have any medical history?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue7" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue7" ngModel>No
+            </td>
+           </tr>
+           <tr>
+            <td>
+                Do you have any respiratory problems?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue8" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue8" ngModel>No
+            </td>
+           </tr>
+           <tr>
+            <td>
+                Do you have history of foreign travelling?
+            </td>
+            <td>
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue9" ngModel>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue9" ngModel>No
+            </td>
+           </tr>      
+        
+     <!--<div class="custom-control custom-radio">
         Do you have history of foreign travelling?
-        <input id="male" type="radio" class="custom-control-input" value="yes" name="gender" ngModel>Yes
-        <input id="female" type="radio" class="custom-control-input" value="no" name="gender" ngModel>No
-     </div>     
+        <input type="radio" class="custom-control-input" value="yes" name="trueValue9" ngModel>Yes
+        <input type="radio" class="custom-control-input" value="no" name="trueValue9" ngModel>No
+     </div>-->     
+    </table>
      <button type="submit" class="btn btn-success btn-block" (click)="onSubmit()">Submit</button>
-  </form>
+    
+   </form>
 </body>
        
    

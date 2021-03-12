@@ -11,7 +11,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
-
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,13 +24,16 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     CountriesComponent,
     HomeComponent,
     NavbarComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    FormsModule
     
   ],
   providers: [],

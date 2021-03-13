@@ -4,6 +4,8 @@ import { CountriesComponent } from './components/countries/countries.component';
 import { HomeComponent } from './components/home/home.component';
 import { VaccinationComponent } from './components/vaccination/vaccination.component';
 import { GeneralAppointmentComponent } from './components/general-appointment/general-appointment.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 const routes: Routes = [
   {path: '' , component: HomeComponent},
@@ -11,6 +13,9 @@ const routes: Routes = [
   {path: 'countries', component: CountriesComponent},
   {path: 'vaccination', component: VaccinationComponent},
   {path: 'general-appointment', component: GeneralAppointmentComponent},
+  {path: 'login' , component: LoginComponent},
+  {path: 'registration' , component: RegistrationComponent},
+  {path: '' , component: LoginComponent},
 ];
 
 @NgModule({

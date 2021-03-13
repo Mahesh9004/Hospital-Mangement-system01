@@ -14,6 +14,9 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
 import { VaccinationComponent } from './components/vaccination/vaccination.component';
 import { GeneralAppointmentComponent } from './components/general-appointment/general-appointment.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,13 +29,16 @@ import { GeneralAppointmentComponent } from './components/general-appointment/ge
     NavbarComponent,
     DashboardCardComponent,
     VaccinationComponent,
-    GeneralAppointmentComponent
+    GeneralAppointmentComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    FormsModule
     
   ],
   providers: [],

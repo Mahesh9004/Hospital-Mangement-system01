@@ -7082,7 +7082,12 @@ button.close {
     margin-bottom: 30px;
     position: relative;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
 
+   opacity: 1;
+
+}
 .booking-form .submit-btn {
     background: #184c8f;
     border: none;

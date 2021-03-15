@@ -23,11 +23,11 @@ export class RegistrationComponent implements OnInit {
   registerUser(){
     this._service.registerUserFromRemote(this.user).subscribe(
       data=>{
-        console.log('response recieved');
+        console.log('response received');
         this._router.navigate(['/login']);
       },
       error=>{
-        console.log('exception occured');
+        console.log('exception occurred');
         this.msg= error.error;
         
       }

@@ -18,4 +18,5 @@ export class RegistrationService {
     return this._http.post<any>("http://localhost:8080/registeruser",user);
   }
 
+  
 }

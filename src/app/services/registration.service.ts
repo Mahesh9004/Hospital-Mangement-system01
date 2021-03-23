@@ -6,10 +6,6 @@ import { User } from 'src/user';
 import { Vaccine } from 'src/vaccine';
 import { General } from 'src/app/general';
 
-
-
-import { General } from 'src/app/general';
-
 @Injectable({
   providedIn: 'root'
 })

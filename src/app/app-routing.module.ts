@@ -7,6 +7,7 @@ import { GeneralAppointmentComponent } from './components/general-appointment/ge
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PendingAppointmentComponent } from './components/pending-appointment/pending-appointment.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
   {path: '' , component: LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'login' , component: LoginComponent},
   {path: 'registration' , component: RegistrationComponent},
   {path: 'pending-appointment', component: PendingAppointmentComponent},
+  {path: 'userprofile', component: UserProfileComponent},
 ];
 
 @NgModule({

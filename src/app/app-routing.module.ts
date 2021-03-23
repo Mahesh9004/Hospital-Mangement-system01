@@ -6,7 +6,6 @@ import { VaccinationComponent } from './components/vaccination/vaccination.compo
 import { GeneralAppointmentComponent } from './components/general-appointment/general-appointment.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-
 const routes: Routes = [
   {path: '' , component: HomeComponent},
   {path: 'home' , component: HomeComponent},

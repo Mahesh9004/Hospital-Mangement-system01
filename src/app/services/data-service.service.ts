@@ -10,7 +10,10 @@ export class DataServiceService {
 
   private globalDataUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/12-31-2020.csv`;
   private dateWiseDataUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv`
+ // private indianDataUrl ='https://www.kaggle.com/sudalairajkumar/covid19-in-india?select=covid_19_india.csv';
+  
   constructor(private http: HttpClient) { }
+
 
   getDateWiseData() {
     return this.http.get(this.dateWiseDataUrl, { responseType: 'text' })

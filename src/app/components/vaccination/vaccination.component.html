@@ -9,7 +9,7 @@
                 </header>
 				<div class="row">
 					<div class="booking-form">
-						<form>
+						<form (ngSubmit)="checkVaccineAppointment()">
 							<!--<div class="col-md-8">
 								<div class="form-group">
 									<input class="form-control" type="text" placeholder="Enter Address, zip, city or airport">
@@ -19,26 +19,26 @@
 							
 							<div class="col-md-4">
 								<div class="form-group">
-									<input class="form-control" type="date" required>
+									<input class="form-control" name="date" [(ngModel)]="vaccine.date" type="date" required>
 									<span class="form-label">Date</span>
 								</div>
 							</div>
                             <div class="col-md-4">
 								<div class="form-group">
-									<input class="form-control" type="time" required>
+									<input class="form-control" name="time" ngbDatePicker  type="time" required>
 									<span class="form-label">Time</span>
 								</div>
 							</div>
                             <div class="col-md-2">
 								<div class="form-group">
-									<input type="number" class="form-control" min="1" max="100" value="1">
+									<input type="number" class="form-control" name="adultCount" [(ngModel)]="vaccine.adultCount" min="1" max="100" value="1">
 									<span class="select-arrow"></span>
 									<span class="form-label">Adult</span>
 								</div>
 							</div>
 							<div class="col-md-2">
 								<div class="form-group">
-                                    <input type="number" class="form-control" min="1" max="100" value="1">
+                                    <input type="number" class="form-control" name="childCount" [(ngModel)]="vaccine.childCount" min="1" max="100" value="0">
 								    <span class="select-arrow"></span>
 									<span class="form-label">Children</span>
 								</div>
@@ -51,7 +51,7 @@
 							</div>-->
 							<div class="col-md-4">
 								<div class="form-btn">
-									<button class="submit-btn">Check availability</button>
+									<button type="submit" class="submit-btn">Check availability</button>
 								</div>
 							</div>
 						</form>

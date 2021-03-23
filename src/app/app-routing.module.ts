@@ -9,8 +9,9 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { PendingAppointmentComponent } from './components/pending-appointment/pending-appointment.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
+
 const routes: Routes = [
-  {path: '' , component: HomeComponent},
+  {path: '' , component: LoginComponent},
   {path: 'home' , component: HomeComponent},
   {path: 'countries', component: CountriesComponent},
   {path: 'vaccination', component: VaccinationComponent},

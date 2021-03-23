@@ -16,6 +16,8 @@ import { GeneralAppointmentComponent } from './components/general-appointment/ge
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FormsModule } from '@angular/forms';
+import { PendingAppointmentComponent } from './components/pending-appointment/pending-appointment.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -31,6 +33,9 @@ import { FormsModule } from '@angular/forms';
     GeneralAppointmentComponent,
     LoginComponent,
     RegistrationComponent,
+    PendingAppointmentComponent,
+    UserProfileComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ export class RegistrationComponent implements OnInit {
 
   user = new User();
   msg='';
+  public uname:any;
   //username: any;
   constructor(private _service: RegistrationService, private _router: Router) { }
 
@@ -24,6 +25,11 @@ export class RegistrationComponent implements OnInit {
     this._service.registerUserFromRemote(this.user).subscribe(
       data=>{
         console.log('response received');
+
+        //localStorage.setItem('name',this.user.userName);
+        //this.uname = localStorage.getItem('name');
+        //console.log(this.uname);
+
         this._router.navigate(['/login']);
       },
       error=>{

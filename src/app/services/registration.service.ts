@@ -30,7 +30,7 @@ export class RegistrationService {
   }
 
   public generalAppointmentFromRemote(general:General):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/generalappointment",general);
+    return this._http.post<any>("http://localhost:8888/generalappointment",general);
   }
 
   hide() { this.visible = false; }

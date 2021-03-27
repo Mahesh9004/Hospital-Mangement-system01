@@ -18,6 +18,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { FormsModule } from '@angular/forms';
 import { PendingAppointmentComponent } from './components/pending-appointment/pending-appointment.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 import { DoctorloginComponent } from './components/doctorlogin/doctorlogin.component';
 import { DoctorregistrationComponent } from './components/doctorregistration/doctorregistration.component';
 
@@ -37,9 +38,9 @@ import { DoctorregistrationComponent } from './components/doctorregistration/doc
     RegistrationComponent,
     PendingAppointmentComponent,
     UserProfileComponent,
+    InvoiceComponent,
     DoctorloginComponent,
     DoctorregistrationComponent,
-
   ],
   imports: [
     BrowserModule,

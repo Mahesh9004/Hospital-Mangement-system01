@@ -8,6 +8,9 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PendingAppointmentComponent } from './components/pending-appointment/pending-appointment.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
+import { InvoiceComponent } from './components/invoice/invoice.component';
+
 import { DoctorregistrationComponent } from './components/doctorregistration/doctorregistration.component';
 import { DoctorloginComponent } from './components/doctorlogin/doctorlogin.component';
 
@@ -22,8 +25,11 @@ const routes: Routes = [
   {path: 'registration' , component: RegistrationComponent},
   {path: 'pending-appointment', component: PendingAppointmentComponent},
   {path: 'userprofile', component: UserProfileComponent},
+  {path: 'invoice', component: InvoiceComponent},
+  {path: '' , component: LoginComponent},
   {path: 'registerdoctor', component: DoctorregistrationComponent},
   {path: 'logindoctor', component: DoctorloginComponent},
+
 ];
 
 @NgModule({

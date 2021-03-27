@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { General } from 'src/app/general';
+import { RegistrationService } from 'src/app/services/registration.service';
+
 
 @Component({
   selector: 'app-pending-appointment',
@@ -7,9 +11,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PendingAppointmentComponent implements OnInit {
 
-  constructor() { }
+  //general = new General();
+  generalappointments : General[];
+  
+  constructor(private _service: RegistrationService, private http: HttpClient) {   }
 
   ngOnInit(): void {
+    this._service.pendingAppointment().subscribe((data: General[])=>{
+      console.log(data);
+      this.generalappointments = data;
+  })
+
+
+  
   }
+
+
+deleteRow(id){
+    
+this.http.delete('http://localhost:8080/deleteappointment/'+id)
+        .subscribe(() =>  {
+          alert('Appointment deleted for Patient With Id '+id);
+        })
+}
+
+/*
+    to delete from ui
+
+    for(let i = 0; i < this.generalappointments.length; ++i){
+        if (this.generalappointments[i].id === id) {
+            this.generalappointments.splice(i,1);
+        }
+    }
+*/
 
 }

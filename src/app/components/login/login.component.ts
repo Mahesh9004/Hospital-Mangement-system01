@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       data =>{
 
         console.log("response received");
-        this._router.navigate(['/home'])
+        this._router.navigate(['/home']);
 
         console.log("response recieved");
         this._router.navigate(['/home']);

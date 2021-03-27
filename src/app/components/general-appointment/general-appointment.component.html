@@ -7,8 +7,9 @@
         <tbody>
         <tr>
             <td>
-                <label>Name : </label>
-                <input type="text"   style="border: none; border-bottom:1px solid black;" name="name" id="name" [(ngModel)]="general.userName" placeholder="{{currentName | titlecase}} "> 
+                <label>Name :  </label>
+                <label for="name" name="name" id="name" [(ngModel)]="general.userName">{{general.userName | titlecase}}</label>
+               
             </td>
             <td>
                 
@@ -25,8 +26,8 @@
              Do you have headache?
          </td>
          <td>
-             <input type="radio" class="custom-control-input" value="yes" name="trueValue1"  [(ngModel)]="general.headache">Yes
-             <input type="radio" class="custom-control-input" value="no" name="trueValue1"  [(ngModel)]="general.headache">No
+             <input type="radio" class="custom-control-input" value="yes" name="trueValue1"  [(ngModel)]="general.headache" required="required">Yes
+             <input type="radio" class="custom-control-input" value="no" name="trueValue1"  [(ngModel)]="general.headache" required="required">No
          </td>
         </tr>
         <br>

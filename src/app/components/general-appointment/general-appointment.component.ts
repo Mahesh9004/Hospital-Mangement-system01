@@ -19,7 +19,7 @@ export class GeneralAppointmentComponent implements OnInit {
   constructor(private _router: Router, private _service: RegistrationService) { }
 
   ngOnInit(): void {
-    this.currentName = sessionStorage.getItem('name');
+    this.general.userName = sessionStorage.getItem('name');
   }
 
   onSubmit(){
@@ -33,7 +33,7 @@ export class GeneralAppointmentComponent implements OnInit {
     this._service.generalAppointmentFromRemote(this.general).subscribe(
       data=>{
         console.log('appointment received');
-        alert('Hello '+this.currentName+' Your Appointment is Booked!');
+        alert('Hello '+this.general.userName+' Your Appointment is Booked!');
         this._router.navigate(['/home']);
       },
       error=>{

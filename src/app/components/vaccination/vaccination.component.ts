@@ -12,9 +12,11 @@ export class VaccinationComponent implements OnInit {
 
   result: String;
   vaccine = new Vaccine();
+  
   constructor(private _service: RegistrationService, private _router: Router) { }
 
   ngOnInit(): void {
+    this.vaccine.patientId = +sessionStorage.getItem('id');
   }
 
   checkVaccineAppointment() {

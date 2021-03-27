@@ -15,20 +15,20 @@ export class RegistrationService {
   constructor(private _http: HttpClient) { }
 
   public loginUserFromRemote(user:User):Observable<any>{
-    return this._http.post<any>("http://localhost:8888/login",user);
+    return this._http.post<any>("http://localhost:8080/login",user);
   }
 
   public registerUserFromRemote(user:User):Observable<any>{
-    return this._http.post<any>("http://localhost:8888/registeruser",user);
+    return this._http.post<any>("http://localhost:8080/registeruser",user);
   }
 
   public registerVaccineAppointment(v:Vaccine):Observable<any>{
-    return this._http.post<any>("http://localhost:8888/vaccination",v);
+    return this._http.post<any>("http://localhost:8080/vaccination",v);
   }
 
 
   public confirmAppointment():Observable<any>{
-    return this._http.get<any>("http://localhost:8888/vaccination");
+    return this._http.get<any>("http://localhost:8080/vaccination");
   }
 
   public generalAppointmentFromRemote(general:General):Observable<any>{

@@ -22,9 +22,9 @@ export class VaccinationComponent implements OnInit {
   checkVaccineAppointment() {
     this._service.registerVaccineAppointment(this.vaccine).subscribe(
       data => {
-        this._service.confirmAppointment().subscribe((res) => { this.result = res.text })
+       // this.result = this._service.confirmAppointment();
+       this.confirmationAppointment();
         console.log('response received');
-        alert("Hello" + this.result);
         this._router.navigate(['/home']);
       },
       error => {
@@ -32,6 +32,32 @@ export class VaccinationComponent implements OnInit {
         //this.msg= error.error;
 
       }
-    )
+    );
+
+
+
+     this._service.confirmAppointment(this.vaccine).subscribe(
+        data => {
+          alert("into confirm appointment 1");
+        console.log(JSON.parse(data));
+        this.result = JSON.parse(data);
+     },
+     error => {
+      alert("into confirm appointment 2");
+        console.log(error);
+        this.result ="error";
+     });
+     
   }
+
+
+  confirmationAppointment(){
+    this._service.confirmAppointment(this.vaccine)
+        .subscribe(
+          res => this.result = res.json().data,
+          error => alert("error")
+        );
+        alert("Hello" + this.result);
+  }
+
 }

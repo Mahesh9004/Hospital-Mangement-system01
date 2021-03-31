@@ -6,6 +6,7 @@ import { User } from 'src/user';
 import { Doctor } from 'src/doctor';
 import { Vaccine } from 'src/vaccine';
 import { General } from 'src/app/general';
+import { Bill } from 'src/app/bill';
 
 @Injectable({
   providedIn: 'root'
@@ -48,9 +49,7 @@ export class RegistrationService {
     return this._http.post<any>("http://localhost:8080/generalappointment",general);
   }
 
-  
-
-  
+ 
   //get methods
   public confirmAppointment(v:Vaccine):Observable<any>{
     let headers = new HttpHeaders();
@@ -58,8 +57,16 @@ export class RegistrationService {
     return this._http.get<any>("http://localhost:8080/vaccination/"+v, {headers:headers} );
   }
 
+  public saveBillFromRemote(b: Bill):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/bill",b);
+  }
+
+  public patientBillHistory():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/billhistory");
+  }
 
 
+  
 
 
   public pendingAppointment():Observable<any>{

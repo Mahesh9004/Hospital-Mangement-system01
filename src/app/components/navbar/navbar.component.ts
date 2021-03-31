@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 
 @Component({
@@ -13,13 +15,14 @@ export class NavbarComponent implements OnInit {
   currentEmail:any;
   hidden:boolean;
   id:number;
-  constructor() {}
+  constructor(private _router: Router, public nav: NavbarService) {}
 
   
   
   ngOnInit(): void {
 
-
+    
+    
     this.currentId = sessionStorage.getItem('id');
 
     this.currentName = sessionStorage.getItem('name');
@@ -33,7 +36,6 @@ export class NavbarComponent implements OnInit {
   }else{
     this.hidden=true;
   }
-
     //console.log('hello '+this.currentEmail);
 
     
@@ -46,6 +48,19 @@ export class NavbarComponent implements OnInit {
     //sessionStorage.removeItem('email');
   }
   
+
+  logOut(){
+    sessionStorage.clear();
+    this._router.navigate(['/']);
+    this.nav.hide();
+  }
+
+
+  
+
+
+
+
  
 
 }

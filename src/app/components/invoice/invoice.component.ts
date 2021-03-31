@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegistrationService } from 'src/app/services/registration.service';
+import { Bill } from 'src/app/bill';
 
 @Component({
   selector: 'app-invoice',
@@ -7,29 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceComponent implements OnInit {
 
-  invoice_number:number;
-  sub_total:number;
-  tax_total:number;
-  grand_total:number;
-  constructor() { }
+  bill = new Bill();
+  constructor(private _service: RegistrationService) { }
 
   ngOnInit(): void {
-    this.invoice_number =2;
-  }
+    
 
-  invoiceSubTotal(){
-    return this.sub_total =10;
-  }
-  calculateTax(){
-    return this.tax_total =5;
-  }
-  calculateGrandTotal(){
-    return this.grand_total =this.tax_total + this.sub_total;
   }
   
   printInfo(){
     console.log("In printinfo");
     window.print();
+  }
+
+  saveBill(){
+    this._service.saveBillFromRemote(this.bill).subscribe(
+      data=>{
+        console.log('bill response received');
+      },
+      error=>{
+        console.log('exception occurred');
+        
+      }
+    )
   }
 
 }

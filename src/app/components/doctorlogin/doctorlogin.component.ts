@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { NgForm } from '@angular/forms';
 import { Doctor } from 'src/doctor';
+import { NavbarService } from 'src/app/services/navbar.service';
+
 
 @Component({
   selector: 'app-doctorlogin',
@@ -18,9 +20,10 @@ export class DoctorloginComponent implements OnInit {
   public dname:any;
   public ddegree:any;
   msg=" ";
-  constructor(private _service: RegistrationService, private _router: Router) { }
+  constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
+    
   }
 
 
@@ -29,6 +32,7 @@ export class DoctorloginComponent implements OnInit {
     this._service.loginDoctorFromRemote(this.doctor).subscribe(
       data =>{
 
+        
         console.log("Doctor login response received");
         this._router.navigate(['/home']);
 

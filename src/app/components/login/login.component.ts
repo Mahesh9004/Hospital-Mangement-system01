@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { fromEventPattern } from 'rxjs';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { User } from 'src/user';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 
 @Component({
@@ -20,21 +21,23 @@ export class LoginComponent implements OnInit {
   public uemail:any;
   public uid:any;
   public uname:any;
-  constructor(private _service: RegistrationService, private _router: Router) { }
+  
+  
+  constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
+    
   }
 
   loginUser(){
     this._service.loginUserFromRemote(this.user).subscribe(
       data =>{
+        
+       
 
         console.log("response received");
         this._router.navigate(['/home']);
-
-        console.log("response recieved");
-        this._router.navigate(['/home']);
-
+            
 
         sessionStorage.setItem('email',this.user.emailId);
         this.uemail = sessionStorage.getItem('email');
@@ -47,6 +50,8 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('name',data.userName);
         this.uname= sessionStorage.getItem('name');
         console.log(this.uname);
+
+        
 
       },
       error => {console.log("exception occurred")

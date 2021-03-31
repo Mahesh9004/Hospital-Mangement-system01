@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <h2 class="text-center" style="color: gray;">All Patient's</h2>
+    <table class="table table-striped ">
+      <thead>
+          <tr class="text-primary">
+            <th>Id</th>
+            <th>PatientName</th>
+            <th>PatientDescription</th>
+            <th>TotalAmount</th>
+           
+          
+           
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bill of bills">
+          <td>{{ bill.id  }}</td>
+          <td>{{ bill.patientName | titlecase  }}</td>
+          <td>{{ bill.patientDescription }}</td>
+          <td>{{ bill.totalAmount}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

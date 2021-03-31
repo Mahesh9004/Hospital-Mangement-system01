@@ -21,6 +21,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { InvoiceComponent } from './components/invoice/invoice.component';
 import { DoctorloginComponent } from './components/doctorlogin/doctorlogin.component';
 import { DoctorregistrationComponent } from './components/doctorregistration/doctorregistration.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { BillComponent } from './components/bill/bill.component';
+import { PatientHistoryComponent } from './components/patient-history/patient-history.component';
 
 
 @NgModule({
@@ -41,6 +44,9 @@ import { DoctorregistrationComponent } from './components/doctorregistration/doc
     InvoiceComponent,
     DoctorloginComponent,
     DoctorregistrationComponent,
+    AdminloginComponent,
+    BillComponent,
+    PatientHistoryComponent,
   ],
   imports: [
     BrowserModule,

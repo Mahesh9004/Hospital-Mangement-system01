@@ -39,25 +39,14 @@ export class VaccinationComponent implements OnInit {
 
 
 
-     this._service.confirmAppointment(this.vaccine).subscribe(
-        data => {
-          alert("into confirm appointment 1");
-        console.log(JSON.parse(data));
-        this.result = JSON.parse(data);
-     },
-     error => {
-      alert("into confirm appointment 2");
-        console.log(error);
-        this.result ="error";
-     });
-     
+    
   }
 
 
   confirmationAppointment(){
     this._service.confirmAppointment(this.vaccine)
         .subscribe(
-          res => this.result = res.json().data,
+          res => this.result = res,
           error => alert("error")
         );
         alert("Hello" + this.result);

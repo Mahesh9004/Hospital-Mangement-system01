@@ -1,4 +1,7 @@
+import { TmplAstRecursiveVisitor } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { LoginComponent } from 'src/app/components/login/login.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +12,7 @@ export class NavbarService {
   patient: boolean;
   doctor: boolean;
   admin:boolean;
+  private testlogin : LoginComponent;
 
   constructor() { this.visible = false; this.patient = false; this.doctor= false; this.admin = false;}
 
@@ -26,5 +30,10 @@ export class NavbarService {
 
   hideAdmin(){this.admin = false;}
   showAdmin(){this.admin = true;}
+
+
+
+
+  
   
 }

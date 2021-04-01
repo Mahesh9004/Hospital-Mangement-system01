@@ -4,6 +4,8 @@ import { GlobalDataSummary } from 'src/app/models/global-data';
 import { DateWiseData } from 'src/app/models/date-wise-data';
 import { merge } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { NavbarService } from 'src/app/services/navbar.service';
+
 
 @Component({
   selector: 'app-countries',
@@ -29,9 +31,11 @@ export class CountriesComponent implements OnInit {
     },
   }
  
-  constructor(private service : DataServiceService) { }
+  constructor(private service : DataServiceService, public nav: NavbarService) { }
 
   ngOnInit(): void {
+
+    this.nav.show();
 
     merge(
       this.service.getDateWiseData().pipe(

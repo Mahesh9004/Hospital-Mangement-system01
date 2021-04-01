@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from 'src/app/services/navbar.service';
+
 
 @Component({
   selector: 'app-user-profile',
@@ -11,10 +13,13 @@ export class UserProfileComponent implements OnInit {
   currentName:any;
   currentEmail:any;
 
-  constructor() { }
+  constructor( public nav: NavbarService) { }
 
   ngOnInit(): void {
 
+
+    this.nav.show();
+    
     this.currentId = sessionStorage.getItem('id');
 
     this.currentName = sessionStorage.getItem('name');

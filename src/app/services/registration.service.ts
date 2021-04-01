@@ -49,17 +49,26 @@ export class RegistrationService {
     return this._http.post<any>("http://localhost:8080/generalappointment",general);
   }
 
+
+  public saveBillFromRemote(b: Bill):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/bill",b);
+  }
+
+  
  
   //get methods
   public confirmAppointment(v:Vaccine):Observable<any>{
     let headers = new HttpHeaders();
     this.createAuthorizationHeader(headers);
-    return this._http.get<any>("http://localhost:8080/vaccination/"+v, {headers:headers} );
+    return this._http.get<any>('http://localhost:8080/vaccination/'+v, {headers:headers} );
   }
 
-  public saveBillFromRemote(b: Bill):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/bill",b);
+ 
+
+  public vaccinePendingAppointments():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/vaccinependingappointments");
   }
+
 
   public patientBillHistory():Observable<any>{
     return this._http.get<any>("http://localhost:8080/billhistory");

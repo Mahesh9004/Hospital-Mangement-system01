@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { General } from 'src/app/general';
 import { RegistrationService } from 'src/app/services/registration.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 
 @Component({
@@ -14,9 +15,10 @@ export class PendingAppointmentComponent implements OnInit {
   //general = new General();
   generalappointments : General[];
   
-  constructor(private _service: RegistrationService, private http: HttpClient) {   }
+  constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) {   }
 
   ngOnInit(): void {
+    this.nav.show();
     this._service.pendingAppointment().subscribe((data: General[])=>{
       console.log(data);
       this.generalappointments = data;

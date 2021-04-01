@@ -15,6 +15,7 @@ import { DoctorregistrationComponent } from './components/doctorregistration/doc
 import { DoctorloginComponent } from './components/doctorlogin/doctorlogin.component';
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { PatientHistoryComponent } from './components/patient-history/patient-history.component';
+import { PendingVaccinationAppointmentComponent } from './components/pending-vaccination-appointment/pending-vaccination-appointment.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'logindoctor', component: DoctorloginComponent},
   {path: 'loginadmin', component: AdminloginComponent},
   {path: 'patienthistory', component: PatientHistoryComponent},
+  {path: 'vaccinependingappointments', component: PendingVaccinationAppointmentComponent},
 
 
 ];

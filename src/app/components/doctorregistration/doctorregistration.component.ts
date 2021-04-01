@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Doctor } from 'src/doctor';
 import { Router } from '@angular/router';
+import { NavbarService } from 'src/app/services/navbar.service';
+
 
 
 @Component({
@@ -14,9 +16,10 @@ export class DoctorregistrationComponent implements OnInit {
 
   doctor = new Doctor();
   msg=" ";
-  constructor(private _service: RegistrationService, private _router: Router) { }
+  constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
+    this.nav.show();
   }
 
 

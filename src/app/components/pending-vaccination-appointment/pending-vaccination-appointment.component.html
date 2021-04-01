@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2 class="text-center" style="color: gray;">Pending Vaccination Appointment's</h2>
+    <table class="table table-striped ">
+      <thead>
+          <tr class="text-primary">
+            <th>Id</th>
+            <th>Date</th>
+            <th>Adult Count</th>
+            <th>Child Count</th>
+            <th>Patient Id</th>
+            
+           
+           
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vac of vaccine">
+          <td>{{ vac.id  }}</td>
+          <td>{{ vac.date  }}</td>
+          <td>{{ vac.adultCount }}</td>
+          <td>{{ vac.childCount}}</td>
+          <td>{{ vac.patientId }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>

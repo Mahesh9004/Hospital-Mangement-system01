@@ -84,4 +84,13 @@ export class RegistrationService {
   public pendingAppointment():Observable<any>{
     return this._http.get<any>("http://localhost:8080/pendingappointment");
   }
+
+
+  public allPatient():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/allpatient");
+  }
+
+  public allDoctor():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/alldoctor");
+  }
 }

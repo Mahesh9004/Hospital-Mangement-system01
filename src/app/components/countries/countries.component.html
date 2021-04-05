@@ -15,37 +15,34 @@
         </div>
     </div>
     <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalRecovered]='totalRecovered' [totalDeaths]='totalDeaths'></app-dashboard-card>
+</div>
 
-
-    <div class="row">
-
-        <div class="col">
-
-            <table class="table">
+   
+<div class="container col-lg-5">
+            <table class="table table-striped">
                 <thead>
-                    <tr>
-                        <th>Sno.</th>
+                    <tr class="text-primary">
                         <th>Date</th>
-                        <th>Cases</th>
+                        <th>Confirmed Cases</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr *ngFor='let cs of selectedCountryData; index as i '>
-                        <td>{{i+1}}</td>
+                    <tr *ngFor='let cs of selectedCountryData | paginate: { itemsPerPage: 9, currentPage: p }'>
                         <td>{{cs.date | date}}</td>
                         <td>{{cs.cases}}</td>
                     </tr>
                 </tbody>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </table>
         </div>
-        <div class="col">
-            <!-- <google-chart></google-chart> -->
-        </div>
+        <!-- <div class="col">
+             <google-chart></google-chart> 
+        </div> -->
 
 
-    </div>
-</div>
+    
+
 <!--
     Data API
     https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports

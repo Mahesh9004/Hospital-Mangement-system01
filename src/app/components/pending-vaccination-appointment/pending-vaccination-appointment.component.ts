@@ -12,6 +12,7 @@ import { NavbarService } from 'src/app/services/navbar.service';
 export class PendingVaccinationAppointmentComponent implements OnInit {
 
   vaccine : Vaccine[];
+  p : number = 1;
   constructor(private _service: RegistrationService, public nav: NavbarService) { }
 
   ngOnInit(): void {

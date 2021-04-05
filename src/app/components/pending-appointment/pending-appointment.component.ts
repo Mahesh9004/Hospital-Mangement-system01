@@ -14,6 +14,7 @@ export class PendingAppointmentComponent implements OnInit {
 
   //general = new General();
   generalappointments : General[];
+  p : number = 1;
   
   constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) {   }
 

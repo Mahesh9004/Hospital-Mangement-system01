@@ -30,7 +30,7 @@ export class CountriesComponent implements OnInit {
       easing: 'out',
     },
   }
- 
+  p : number = 1;
   constructor(private service : DataServiceService, public nav: NavbarService) { }
 
   ngOnInit(): void {

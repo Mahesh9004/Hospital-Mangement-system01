@@ -12,6 +12,7 @@ import { NavbarService } from 'src/app/services/navbar.service';
 export class PatientHistoryComponent implements OnInit {
 
   bills : Bill[];
+  p : number = 1;
   constructor(private _service: RegistrationService, public nav: NavbarService) { }
 
   ngOnInit(): void {

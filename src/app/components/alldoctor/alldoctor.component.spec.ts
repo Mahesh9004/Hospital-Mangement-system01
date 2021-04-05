@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { InvoiceComponent } from './invoice.component';
+import { AlldoctorComponent } from './alldoctor.component';
 
-describe('InvoiceComponent', () => {
-  let component: InvoiceComponent;
-  let fixture: ComponentFixture<InvoiceComponent>;
+describe('AlldoctorComponent', () => {
+  let component: AlldoctorComponent;
+  let fixture: ComponentFixture<AlldoctorComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ InvoiceComponent ]
+      declarations: [ AlldoctorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InvoiceComponent);
+    fixture = TestBed.createComponent(AlldoctorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

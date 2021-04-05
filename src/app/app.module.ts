@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { CountriesComponent } from './components/countries/countries.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -25,13 +23,14 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
 import { BillComponent } from './components/bill/bill.component';
 import { PatientHistoryComponent } from './components/patient-history/patient-history.component';
 import { PendingVaccinationAppointmentComponent } from './components/pending-vaccination-appointment/pending-vaccination-appointment.component';
+import { AllpatientComponent } from './components/allpatient/allpatient.component';
+import { AlldoctorComponent } from './components/alldoctor/alldoctor.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
     CountriesComponent,
     HomeComponent,
     NavbarComponent,
@@ -49,6 +48,8 @@ import { PendingVaccinationAppointmentComponent } from './components/pending-vac
     BillComponent,
     PatientHistoryComponent,
     PendingVaccinationAppointmentComponent,
+    AllpatientComponent,
+    AlldoctorComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +57,7 @@ import { PendingVaccinationAppointmentComponent } from './components/pending-vac
     HttpClientModule,
     GoogleChartsModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

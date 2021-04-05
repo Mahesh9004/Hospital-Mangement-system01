@@ -12,6 +12,7 @@ import { NavbarService } from 'src/app/services/navbar.service';
 export class InvoiceComponent implements OnInit {
 
   bill = new Bill();
+  text : string;
   constructor(private _service: RegistrationService,public nav: NavbarService ) { }
 
   ngOnInit(): void {
@@ -28,10 +29,10 @@ export class InvoiceComponent implements OnInit {
   saveBill(){
     this._service.saveBillFromRemote(this.bill).subscribe(
       data=>{
-        console.log('bill response received');
+        this.text = "Invoice Response Saved Successfully !"
       },
       error=>{
-        console.log('exception occurred');
+        this.text = "Invoice Response Failed to Save !"
         
       }
     )

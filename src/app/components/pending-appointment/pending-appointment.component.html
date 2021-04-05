@@ -21,7 +21,7 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let general of generalappointments">
+        <tr *ngFor="let general of generalappointments | paginate: { itemsPerPage: 2  , currentPage: p }">
           <td>{{ general.id  }}</td>
           <td>{{ general.userName | titlecase  }}</td>
           <td>{{ general.appointmentDate }}</td>
@@ -40,5 +40,6 @@
             <button class="btn btn-danger" (click)="deleteRow(general.id)">Decline</button></td>
         </tr>
       </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </table>
   </div>

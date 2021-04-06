@@ -2,14 +2,10 @@ export class General {
     id: number;
     userName: string;
     appointmentDate: string;
-    headache: string;
+    dryCough: string;
     fever: string;
-    cold:string;
-    bp: string;
-    diabetes: string;
-    prescription: string;
-    medicalHistory: string;
-    respiratoryProblems: string;
-    foreignTravelling: string;
+    lossOfTaste: string;
+    breath: string;
+    
     constructor(){}
 }

@@ -13,7 +13,7 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let bill of bills | paginate: { itemsPerPage: 1 , currentPage: p }">
+        <tr *ngFor="let bill of bills | paginate: { itemsPerPage: 8 , currentPage: p }">
           <td>{{ bill.id  }}</td>
           <td>{{ bill.patientName | titlecase  }}</td>
           <td>{{ bill.patientDescription }}</td>

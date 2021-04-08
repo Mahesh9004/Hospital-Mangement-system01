@@ -36,7 +36,9 @@ export class CountriesComponent implements OnInit {
   ngOnInit(): void {
 
     this.nav.show();
-
+   //this.nav.showPatient();
+   //this.nav.showDoctor();
+   //this.nav.showAdmin();
     merge(
       this.service.getDateWiseData().pipe(
         map(result=>{
@@ -52,7 +54,7 @@ export class CountriesComponent implements OnInit {
     ).subscribe(
       {
         complete : ()=>{
-         this.updateValues('India')
+         this.updateValues('Afghanistan')
          this.loading = false;
         }
       }

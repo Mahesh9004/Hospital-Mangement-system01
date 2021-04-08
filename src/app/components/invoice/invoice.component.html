@@ -64,7 +64,7 @@
         <!--<button class="btn btn-primary" ng-click="clearLocalStorage()">Reset</button>
       </div>
     </div> -->
-    <form >
+    <form ngNativeValidate (ngSubmit)="saveBill()">
       <div class="container justify-content-center">
         <div class="col d-flex justify-content-center">
           <div class="card mt-5" style="width: 60rem;">
@@ -73,18 +73,27 @@
                   <h3 style=" background-color:#357EBD; color:#FFF;text-center;text-align:center;">INVOICE</h3>
                   <h6 class="card-title text-center">Covid-19 HMS</h6>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" [(ngModel)]="bill.patientName" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" [(ngModel)]="bill.patientName"  #name="ngModel" required [class.is-invalid]="name.invalid && name.touched">
                     <label for="name">Patient Name</label>
+                    <div *ngIf="name.invalid && name.touched"> 
+                      <small class="text-danger" *ngIf="name.errors.required">Patient Name is Required!</small>
+                      </div>
                   </div>
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Description" id="description" name="description" style="height: 100px"  [(ngModel)]="bill.patientDescription"  ngModel required></textarea>
+                    <textarea class="form-control" placeholder="Description" id="description" name="description" style="height: 100px"  [(ngModel)]="bill.patientDescription"  #description="ngModel" required [class.is-invalid]="description.invalid && description.touched"></textarea>
                     <label for="description">Patient Description</label>
+                    <div *ngIf="description.invalid && description.touched"> 
+                      <small class="text-danger" *ngIf="description.errors.required">Description is Required!</small>
+                      </div>
                   </div>
                   <br>
                   
                         <div class="form-floating mb-3" >
-                          <input type="text" class="form-control" id="amount" name="amount" placeholder="  Enter Amount"  [(ngModel)]="bill.totalAmount" required>
+                          <input type="text" class="form-control" id="amount" name="amount" placeholder="  Enter Amount"  [(ngModel)]="bill.totalAmount"  #amount="ngModel" required [class.is-invalid]="amount.invalid && amount.touched">
                           <label for="amount">Total Amount</label>
+                          <div *ngIf="amount.invalid && amount.touched"> 
+                            <small class="text-danger" *ngIf="amount.errors.required">Amount is Required!</small>
+                            </div>
                         </div>
             
                   <div>
@@ -92,10 +101,10 @@
                     
                   </div>
                   <div class="modal-footer">
-                    <button class="btn btn-info" (click)="saveBill()">Save</button>
+                    <button class="btn btn-info" type="submit">Save</button>
                     <button class="btn btn-primary" (click)="printInfo()">Print</button>
                   </div>
-                  <div class="modal-footer">
+                  <div class="modal-footer text-primary">
                     {{text}}
                   </div>
 

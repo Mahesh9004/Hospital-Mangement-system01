@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataServiceService } from 'src/app/services/data-service.service';
 import { GlobalDataSummary } from 'src/app/models/global-data';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { LoginComponent } from '../login/login.component';
 
 
 
@@ -33,15 +34,18 @@ export class HomeComponent implements OnInit {
     }  
   }
   
-  
   constructor(private dataService: DataServiceService,public nav: NavbarService) { }
+
 
 
   
   ngOnInit(): void {
 
     this.nav.show();
-
+   //this.nav.showPatient();
+   //this.nav.showDoctor();
+   //this.nav.showAdmin();
+  
     this.dataService.getGlobalData()
       .subscribe(
         {

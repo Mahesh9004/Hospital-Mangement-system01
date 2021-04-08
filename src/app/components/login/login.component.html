@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin: auto; width: 50%; margin-top: 5%">
     <h2>Patient Login</h2>
     <form #loginform="ngForm" (ngSubmit)="loginUser()">
         <!--{{loginform.form.valid}}-->
@@ -24,11 +24,15 @@
         >
         <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required!</small>
       </div><br>
-      <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-primary" ng-model="isHidden">Login</button>
-      <div class="text-right">
-            <small class="float-right" style="float-right;"  [routerLink]="['/registration']">New User?</small>  
-            <small routerLink='logindoctor'>Doctor ?</small>
-            <small routerLink='loginadmin' >Admin ?</small>
+      <div class="row">
+        <div class="col">
+          <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-primary" ng-model="isHidden">Login</button>
+        </div>
+        <div class="col" style="text-align: right; margin: 1rem;">
+            <a routerLink='registration'><small>New User?</small></a>  &nbsp;
+            <a routerLink='logindoctor'><small>Doctor ?</small></a>&nbsp;
+            <a routerLink='loginadmin'><small >Admin ?</small></a>
+          </div>
         </div>
     </form>
         

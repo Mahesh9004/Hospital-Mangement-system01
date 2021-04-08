@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin: auto; width: 50%; margin-top: 5%">
     <h2 class="textual">Registration</h2>
     <form #Registerform="ngForm" (ngSubmit)="registerUser()">
 
@@ -36,11 +36,15 @@
          </div>
          <br>
     
+         <div class="row">
+             <div class="col">
+                <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-primary">Register</button>
+             </div>
+             <div class="col" style="text-align: right; margin: 1rem;">
+                <a routerLink='login'><small>Existing User? Login Here</small></a>
+             </div>
+         </div>
     
-        <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-primary">Register</button>
     </form>
-        
-        
-        <small class="float-right"  [routerLink]="['/login']">Existing User? Login Here</small>
         
 </div>

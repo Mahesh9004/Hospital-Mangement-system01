@@ -26,6 +26,7 @@ import { PendingVaccinationAppointmentComponent } from './components/pending-vac
 import { AllpatientComponent } from './components/allpatient/allpatient.component';
 import { AlldoctorComponent } from './components/alldoctor/alldoctor.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     PendingVaccinationAppointmentComponent,
     AllpatientComponent,
     AlldoctorComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

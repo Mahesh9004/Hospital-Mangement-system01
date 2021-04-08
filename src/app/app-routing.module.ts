@@ -18,6 +18,7 @@ import { PatientHistoryComponent } from './components/patient-history/patient-hi
 import { PendingVaccinationAppointmentComponent } from './components/pending-vaccination-appointment/pending-vaccination-appointment.component';
 import { AllpatientComponent } from './components/allpatient/allpatient.component';
 import { AlldoctorComponent } from './components/alldoctor/alldoctor.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'vaccinependingappointments', component: PendingVaccinationAppointmentComponent},
   {path: 'allpatient' , component: AllpatientComponent},
   {path: 'alldoctor' , component: AlldoctorComponent},
+  {path: 'confirmation', component: ConfirmationComponent},
 
 
 ];

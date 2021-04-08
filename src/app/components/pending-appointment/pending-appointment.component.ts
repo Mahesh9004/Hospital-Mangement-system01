@@ -20,6 +20,9 @@ export class PendingAppointmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.show();
+    //this.nav.showPatient();
+    //this.nav.showDoctor();
+    //this.nav.showAdmin();
     this._service.pendingAppointment().subscribe((data: General[])=>{
       console.log(data);
       this.generalappointments = data;

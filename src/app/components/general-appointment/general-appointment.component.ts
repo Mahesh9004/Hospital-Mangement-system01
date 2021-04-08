@@ -18,6 +18,7 @@ export class GeneralAppointmentComponent implements OnInit {
   currentName:any;
   
   msg='';
+  
   constructor(private _router: Router, private _service: RegistrationService,  public nav: NavbarService) { }
 
   ngOnInit(): void {
@@ -36,8 +37,8 @@ export class GeneralAppointmentComponent implements OnInit {
     this._service.generalAppointmentFromRemote(this.general).subscribe(
       data=>{
         console.log('appointment received');
-        alert('Hello '+this.general.userName+' Your Appointment is Booked!');
-        this._router.navigate(['/home']);
+        
+        this._router.navigate(['/confirmation']);
       },
       error=>{
         console.log('exception occurred');

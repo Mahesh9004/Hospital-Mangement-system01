@@ -25,7 +25,6 @@ import { AdminloginComponent } from './components/adminlogin/adminlogin.componen
 import { BillComponent } from './components/bill/bill.component';
 import { PatientHistoryComponent } from './components/patient-history/patient-history.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

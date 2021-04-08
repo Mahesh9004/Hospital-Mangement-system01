@@ -25,7 +25,7 @@
 							</div>
                             <div class="col-md-4">
 								<div class="form-group">
-									<input class="form-control" name="time" ngbDatePicker  type="time" required>
+									<input class="form-control" name="time" [(ngModel)]="vaccine.time" type="time" required>
 									<span class="form-label">Time</span>
 								</div>
 							</div>
@@ -51,7 +51,7 @@
 							</div>-->
 							<div class="col-md-4">
 								<div class="form-btn">
-									<button type="submit" class="submit-btn">Check availability</button>
+									<button type="submit" class="submit-btn">Book an Appointment</button>
 								</div>
 							</div>
 						</form>

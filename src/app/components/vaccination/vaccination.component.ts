@@ -50,9 +50,8 @@ export class VaccinationComponent implements OnInit {
     this._service.confirmAppointment(this.vaccine)
         .subscribe(
           res => this.result = res,
-          error => alert("error")
         );
-        alert("Hello" + this.result);
+       
   }
 
 }

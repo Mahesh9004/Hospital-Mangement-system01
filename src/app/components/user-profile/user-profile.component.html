@@ -15,6 +15,25 @@
 
   </div>
 
+
+<div class="col d-flex justify-content-center">
+  <div class="card mt-5" style="width: 30rem;">
+      <div class="card-body">
+          <h3 class="card-title text-primary">Covid-19 Test appointments</h3> 
+          <table class="table table-striped" *ngIf="general?.length">
+            <ng-container *ngFor="let gen of general">
+            <tr>
+              <td><p style="color:grey">Status: </p></td>
+              <td><p style="color:grey">Pending </p></td>
+            </tr>
+            <tr>
+              <td><p style="color:grey">Appointment Date: </p></td>
+              <td><p style="color:grey">{{gen.appointmentDate | date:'fullDate'}} </p></td>
+            </tr>
+          </ng-container>
+          </table>
+          <p *ngIf="!general?.length" style="color:grey">Not Applicable </p>
+
   <div class="col">
 
     <div class="col d-flex justify-content-center">
@@ -45,6 +64,27 @@
 </div>
 
 
+<div class="col d-flex justify-content-center">
+  <div class="card mt-5" style="width: 30rem;">
+      <div class="card-body">
+          <h3 class="card-title text-primary">Vaccination appointment</h3>
+          <table class="table table-striped " *ngIf="vaccine?.length">
+            <ng-container *ngFor="let v of vaccine">
+            <tr>
+              <td><p style="color:grey">Status: </p></td>
+              <td><p style="color:grey">Pending </p></td>
+            </tr>
+            <tr>
+              <td><p style="color:grey">Appointment Date: </p></td>
+              <td><p style="color:grey">{{v.date | date:'fullDate'}} at {{v.time }} </p></td>
+            </tr>
+            <tr>
+              <td><p style="color:grey">Date for Second Dose of Vaccination: </p></td>
+              <td><p style="color:grey">{{getSecondDate(v.date) | date:'fullDate' }} at {{v.time }} </p></td>
+            </tr>
+          </ng-container>
+          </table>
+          <p *ngIf="!vaccine?.length" style="color:grey">Not Applicable </p>
 <div class="row">
   <div class="col">
 

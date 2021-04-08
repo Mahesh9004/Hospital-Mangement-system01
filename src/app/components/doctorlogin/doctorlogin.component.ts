@@ -53,6 +53,13 @@ export class DoctorloginComponent implements OnInit {
         this.ddegree= sessionStorage.getItem('degree');
         console.log(this.ddegree);
 
+
+        this.nav.show();
+        //this.nav.showDoctor();
+
+        //this.nav.hidePatient();
+        //this.nav.hideAdmin();
+
       },
       error => {console.log("exception occurred")
       this.msg="Bad Credentials, please enter valid doctor email id and password!";

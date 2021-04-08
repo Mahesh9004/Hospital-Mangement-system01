@@ -14,7 +14,6 @@ export class NavbarComponent implements OnInit {
   currentId:any;
   currentName:any;
   currentEmail:any;
-  hidden:boolean;
   id:number;
   
   constructor(private _router: Router, public nav: NavbarService) {}
@@ -31,13 +30,7 @@ export class NavbarComponent implements OnInit {
    
     this.currentEmail = sessionStorage.getItem('email');
     this.id = +this.currentId;
-    if(this.id == 1){
-        this.hidden = true;
-    }else if(this.id == 2){
-      this.hidden = false;
-  }else{
-    this.hidden=true;
-  }
+    
     //console.log('hello '+this.currentEmail);
 
     
@@ -55,11 +48,12 @@ export class NavbarComponent implements OnInit {
     sessionStorage.clear();
     this._router.navigate(['/']);
     this.nav.hide();
+    this.nav.hideAdmin();
+    this.nav.hideDoctor();
+    this.nav.hidePatient();
   }
 
-  patientNav(){
-    this.nav.showPatient();
-  }
+ 
   
 
 

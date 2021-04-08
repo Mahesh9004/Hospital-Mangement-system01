@@ -1,14 +1,19 @@
 <div class="card  m-5 mb-5">
 <body ng-app="">
     <h1 class="text-center" style="color: gray;">Questionnaire</h1>
-<form #GeneralAppointmenform="ngForm" (ngSubmit)="saveAppointment()">
+<form #GeneralAppointmenform="ngForm" (ngSubmit)="saveAppointment()" ngNativeValidate>
     <table class="table ">
         
         <tbody>
         <tr>
             <td>
+
                 <label>Name :  </label>
                 <label name="general.userName" [(ngModel)]="general.userName">{{general.userName | titlecase}}</label>
+
+                <!-- <label>Name :  </label> -->
+                <label for="name" name="name" id="name" [(ngModel)]="general.userName">{{general.userName | titlecase}}</label>
+
                
             </td>
             <td>
@@ -23,11 +28,11 @@
         <br>
         <tr>
          <td>
-             Do you have headache?
+           Do you have dry cough?
          </td>
          <td>
-             <input type="radio" class="custom-control-input" value="yes" name="trueValue1"  [(ngModel)]="general.headache" required="required">Yes
-             <input type="radio" class="custom-control-input" value="no" name="trueValue1"  [(ngModel)]="general.headache" required="required">No
+             <input type="radio" class="custom-control-input" value="yes" name="trueValue1"  [(ngModel)]="general.dryCough" required="required">Yes
+             <input type="radio" class="custom-control-input" value="no" name="trueValue1"  [(ngModel)]="general.dryCough" >No
          </td>
         </tr>
         <br>
@@ -36,80 +41,32 @@
                 Do you have fever?
             </td>
             <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue2"  [(ngModel)]="general.fever">Yes
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue2"  [(ngModel)]="general.fever" required>Yes
                 <input type="radio" class="custom-control-input" value="no" name="trueValue2" [(ngModel)]="general.fever">No
             </td>
         </tr>
         <br>
         <tr>
             <td>
-                Do you have cold?
+                loss of taste or smell ?
             </td>
             <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue3" [(ngModel)]="general.cold">Yes
-                <input type="radio" class="custom-control-input" value="no" name="trueValue3" [(ngModel)]="general.cold">No
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue3" [(ngModel)]="general.lossOfTaste" required>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue3" [(ngModel)]="general.lossOfTaste">No
             </td>
-           </tr>
+        </tr>
            <br>
-           <tr>
+         <tr>
             <td>
-                Do you have BP problems?
+                difficulty breathing or shortness of breath ?
             </td>
             <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue4" [(ngModel)]="general.bp">Yes
-                <input type="radio" class="custom-control-input" value="no" name="trueValue4" [(ngModel)]="general.bp">No
+                <input type="radio" class="custom-control-input" value="yes" name="trueValue4" [(ngModel)]="general.breath" required>Yes
+                <input type="radio" class="custom-control-input" value="no" name="trueValue4" [(ngModel)]="general.breath">No
             </td>
-           </tr>
-           <br>
-           <tr>
-            <td>
-                Do you have diabetes?
-            </td>
-            <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue5" [(ngModel)]="general.diabetes">Yes
-                <input type="radio" class="custom-control-input" value="no" name="trueValue5" [(ngModel)]="general.diabetes">No
-            </td>
-           </tr>
-           <br>
-           <tr>
-            <td>
-                Are you on any prescription?
-            </td>
-            <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue6" [(ngModel)]="general.prescription">Yes
-                <input type="radio" class="custom-control-input" value="no" name="trueValue6" [(ngModel)]="general.prescription">No
-            </td>
-           </tr>
-           <br>
-           <tr>
-            <td>
-                Do you have any medical history?
-            </td>
-            <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue7" [(ngModel)]="general.medicalHistory">Yes
-                <input type="radio" class="custom-control-input" value="no" name="trueValue7" [(ngModel)]="general.medicalHistory">No
-            </td>
-           </tr>
-           <br>
-           <tr>
-            <td>
-                Do you have any respiratory problems?
-            </td>
-            <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue8" [(ngModel)]="general.respiratoryProblems">Yes
-                <input type="radio" class="custom-control-input" value="no" name="trueValue8" [(ngModel)]="general.respiratoryProblems">No
-            </td>
-           </tr>
-           <br>
-           <tr>
-            <td>
-                Do you have history of foreign travelling?
-            </td>
-            <td>
-                <input type="radio" class="custom-control-input" value="yes" name="trueValue9" [(ngModel)]="general.foreignTravelling">Yes
-                <input type="radio" class="custom-control-input" value="no" name="trueValue9" [(ngModel)]="general.foreignTravelling">No
-            </td>
-           </tr>      
+        </tr>
+    
+           
            <br>
         </tbody>
      <!--<div class="custom-control custom-radio">
@@ -119,8 +76,11 @@
      </div>-->     
     </table>
     <div class="text-center">
-     <button type="submit" class="btn btn-success btn-block ">Submit</button>
+     <button type="submit" class="btn btn-primary btn-block ">Submit</button>
     </div>
+    <!-- <div class="modal-footer text-primary font-weight-bold" style="text-align: center;">
+        {{text}}
+      </div> -->
    </form>
   
 </body>

@@ -14,12 +14,19 @@ export class PendingAppointmentComponent implements OnInit {
 
   general = new General();
   generalappointments : General[];
+
   response:String;
+
+  p : number = 1;
+
   
   constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) {   }
 
   ngOnInit(): void {
     this.nav.show();
+    //this.nav.showPatient();
+    //this.nav.showDoctor();
+    //this.nav.showAdmin();
     this._service.pendingAppointment().subscribe((data: General[])=>{
       console.log(data);
       this.generalappointments = data;

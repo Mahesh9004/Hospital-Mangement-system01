@@ -16,6 +16,9 @@ import { DoctorloginComponent } from './components/doctorlogin/doctorlogin.compo
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { PatientHistoryComponent } from './components/patient-history/patient-history.component';
 import { PendingVaccinationAppointmentComponent } from './components/pending-vaccination-appointment/pending-vaccination-appointment.component';
+import { AllpatientComponent } from './components/allpatient/allpatient.component';
+import { AlldoctorComponent } from './components/alldoctor/alldoctor.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 
 const routes: Routes = [
@@ -35,12 +38,15 @@ const routes: Routes = [
   {path: 'loginadmin', component: AdminloginComponent},
   {path: 'patienthistory', component: PatientHistoryComponent},
   {path: 'vaccinependingappointments', component: PendingVaccinationAppointmentComponent},
+  {path: 'allpatient' , component: AllpatientComponent},
+  {path: 'alldoctor' , component: AlldoctorComponent},
+  {path: 'confirmation', component: ConfirmationComponent},
 
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -3,14 +3,10 @@ export class General {
     patientId: number;
     userName: String;
     appointmentDate: string;
-    headache: string;
+    dryCough: string;
     fever: string;
-    cold:string;
-    bp: string;
-    diabetes: string;
-    prescription: string;
-    medicalHistory: string;
-    respiratoryProblems: string;
-    foreignTravelling: string;
+    lossOfTaste: string;
+    breath: string;
+    
     constructor(){}
 }

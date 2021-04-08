@@ -14,7 +14,7 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let vac of vaccine">
+        <tr *ngFor="let vac of vaccine | paginate: { itemsPerPage: 3, currentPage: p }">
           <td>{{ vac.id  }}</td>
           <td>{{ vac.date  }}</td>
           <td>{{ vac.adultCount }}</td>
@@ -23,5 +23,6 @@
           
         </tr>
       </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </table>
   </div>

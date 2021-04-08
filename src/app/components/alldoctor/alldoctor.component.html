@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <h2 class="text-center" style="color: gray;"> All Doctor's</h2>
+    <table class="table table-striped ">
+      <thead>
+          <tr class="text-primary">
+            <th>Id</th>
+            <th>Doctor Name</th>
+            <th>Doctor Email Id</th>
+            <th>Doctor Degree</th>
+            <th>Password</th>
+                     
+
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doctor of doctors | paginate: { itemsPerPage: 1, currentPage: p }">
+          <td>{{ doctor.id }}</td>
+          <td>{{ doctor.doctorName | titlecase  }}</td>
+          <td>{{ doctor.doctorEmail }}</td>
+          <td>{{ doctor.doctorDegree}}</td>
+          <td>{{ doctor.password }}</td>
+         
+       
+        </tr>
+      </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    </table>
+  </div>

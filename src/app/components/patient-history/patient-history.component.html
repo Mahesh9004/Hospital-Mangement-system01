@@ -13,12 +13,13 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let bill of bills">
+        <tr *ngFor="let bill of bills | paginate: { itemsPerPage: 1 , currentPage: p }">
           <td>{{ bill.id  }}</td>
           <td>{{ bill.patientName | titlecase  }}</td>
           <td>{{ bill.patientDescription }}</td>
           <td>{{ bill.totalAmount}}</td>
         </tr>
       </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </table>
   </div>

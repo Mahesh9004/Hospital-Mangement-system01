@@ -23,6 +23,10 @@ export class AdminloginComponent implements OnInit {
 
   loginAdmin(){
 
+    this.nav.show();
+      // this.nav.showAdmin();
+      // this.nav.hidePatient();
+      // this.nav.hideDoctor();
 
       const email = 'admin@gmail.com'; //this.form.value.userName;
       const password = 'admin'; //this.form.value.passwd;
@@ -33,10 +37,9 @@ export class AdminloginComponent implements OnInit {
         alert('Invalid Credentials!');
       }
 
+     
       
-
-      
-
+     
       
     
   }

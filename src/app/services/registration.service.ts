@@ -99,4 +99,13 @@ export class RegistrationService {
   public getInvoiceInfo(patientId:number):Observable<any>{
     return this._http.get<any>('http://localhost:8080/getInvoiceInfo/'+patientId);
   }
+
+
+  public allPatient():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/allpatient");
+  }
+
+  public allDoctor():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/alldoctor");
+  }
 }

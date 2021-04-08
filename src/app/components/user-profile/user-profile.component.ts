@@ -15,7 +15,7 @@ export class UserProfileComponent implements OnInit {
   currentId:number;
   currentName:any;
   currentEmail:any;
-  secondDate:Date;
+  secondDate = new Date();
 
   general : General[];
   vaccine :  Vaccine[];
@@ -67,7 +67,9 @@ export class UserProfileComponent implements OnInit {
   }
 
   getSecondDate(date: Date): Date {
-    date.setDate(date.getDate() + 28);
-    return date;
-}
+    this.secondDate = new Date(date);
+    console.log(this.secondDate)
+    this.secondDate.setDate(this.secondDate.getDate() + 28);
+    return this.secondDate;
+ }
 }

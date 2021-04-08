@@ -46,11 +46,11 @@
             </tr>
             <tr>
               <td><p style="color:grey">Appointment Date: </p></td>
-              <td><p style="color:grey">{{v.date}} </p></td>
+              <td><p style="color:grey">{{v.date | date:'fullDate'}} </p></td>
             </tr>
             <tr>
               <td><p style="color:grey">Date for Second Dose of Vaccination: </p></td>
-              <td><p style="color:grey">{{getSecondDate(v.date)}} </p></td>
+              <td><p style="color:grey">{{getSecondDate(v.date) | date:'fullDate' }} </p></td>
             </tr>
           </ng-container>
           </table>

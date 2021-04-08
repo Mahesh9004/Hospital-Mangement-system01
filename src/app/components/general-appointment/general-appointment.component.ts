@@ -18,10 +18,12 @@ export class GeneralAppointmentComponent implements OnInit {
   currentName:any;
   
   msg='';
-  
+  today=new Date();
   constructor(private _router: Router, private _service: RegistrationService,  public nav: NavbarService) { }
 
+  
   ngOnInit(): void {
+    
     this.nav.show();
     this.general.userName = sessionStorage.getItem('name');
     this.general.patientId = +sessionStorage.getItem('id');

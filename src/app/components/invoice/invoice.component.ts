@@ -17,6 +17,7 @@ export class InvoiceComponent implements OnInit {
 
   ngOnInit(): void {
     
+    this.bill.patientId = +sessionStorage.getItem('id');
     this.nav.show();
 
   }

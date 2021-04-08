@@ -49,6 +49,10 @@ export class RegistrationService {
     return this._http.post<String>("http://localhost:8080/vaccination",v);
   }
 
+  public approveAppointment(patientId:number):Observable<any>{
+    console.log("In get approve appointment pid = "+patientId)
+    return this._http.get<any>('http://localhost:8080/approveAppointment/'+patientId);
+  }
   public saveBillFromRemote(b: Bill):Observable<any>{
     return this._http.post<any>("http://localhost:8080/bill",b);
   }
@@ -78,11 +82,22 @@ export class RegistrationService {
   }
 
 
-  
-
-
   public pendingAppointment():Observable<any>{
     return this._http.get<any>("http://localhost:8080/pendingappointment");
+  }
+
+
+  
+  public getTestAppointmentInfo(patientId:number):Observable<any>{
+    return this._http.get<any>('http://localhost:8080/getTestAppointmentInfo/'+patientId);
+  }
+
+  public getVaccineAppointmentInfo(patientId:number):Observable<any>{
+    return this._http.get<any>('http://localhost:8080/getVaccineAppointmentInfo/'+patientId);
+  }
+
+  public getInvoiceInfo(patientId:number):Observable<any>{
+    return this._http.get<any>('http://localhost:8080/getInvoiceInfo/'+patientId);
   }
 
 

@@ -28,7 +28,6 @@ import { AlldoctorComponent } from './components/alldoctor/alldoctor.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

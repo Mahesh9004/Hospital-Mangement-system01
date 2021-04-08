@@ -20,9 +20,12 @@ export class VaccinationComponent implements OnInit {
   ngOnInit(): void {
     this.nav.show();
     this.vaccine.patientId = +sessionStorage.getItem('id');
+    this.vaccine.patientName = sessionStorage.getItem('name');
   }
 
+
   checkVaccineAppointment() {
+  
     this._service.registerVaccineAppointment(this.vaccine).subscribe(
       data => {
        // this.result = this._service.confirmAppointment();

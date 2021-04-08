@@ -7,8 +7,13 @@
         <tbody>
         <tr>
             <td>
+
+                <label>Name :  </label>
+                <label name="general.userName" [(ngModel)]="general.userName">{{general.userName | titlecase}}</label>
+
                 <!-- <label>Name :  </label> -->
                 <label for="name" name="name" id="name" [(ngModel)]="general.userName">{{general.userName | titlecase}}</label>
+
                
             </td>
             <td>

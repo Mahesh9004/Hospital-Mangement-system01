@@ -12,9 +12,13 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class PendingAppointmentComponent implements OnInit {
 
-  //general = new General();
+  general = new General();
   generalappointments : General[];
+
+  response:String;
+
   p : number = 1;
+
   
   constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) {   }
 
@@ -26,12 +30,19 @@ export class PendingAppointmentComponent implements OnInit {
     this._service.pendingAppointment().subscribe((data: General[])=>{
       console.log(data);
       this.generalappointments = data;
-  })
-
-
+    })
+  
   
   }
 
+
+  approveAppointment(pid:number) {
+    console.log("In approve appointment with pid ="+pid)
+    this._service.approveAppointment(pid).subscribe((res) => {
+      this.response = res;
+      alert(this.response)
+    });
+  }
 
 deleteRow(id){
     

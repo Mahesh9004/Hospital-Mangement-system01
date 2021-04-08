@@ -24,6 +24,7 @@ export class GeneralAppointmentComponent implements OnInit {
   ngOnInit(): void {
     this.nav.show();
     this.general.userName = sessionStorage.getItem('name');
+    this.general.patientId = +sessionStorage.getItem('id');
   }
 
   onSubmit(){

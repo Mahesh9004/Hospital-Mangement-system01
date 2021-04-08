@@ -1,6 +1,7 @@
 export class General {
     id: number;
-    userName: string;
+    patientId: number;
+    userName: String;
     appointmentDate: string;
     dryCough: string;
     fever: string;

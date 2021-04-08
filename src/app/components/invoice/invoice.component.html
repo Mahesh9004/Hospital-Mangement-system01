@@ -20,7 +20,7 @@
           <div class="col-xs-5 text-right">Total</div>
         </div>
 
-        <!--<div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">
+        <div class="row invoice-item" ng-repeat="item in invoice.items" ng-animate="'slide-down'">
           <div class="col-xs-1 remove-item-container">
             <a href ng-hide="printMode" ng-click="removeItem(item)" class="btn btn-danger">[X]</a>
           </div>
@@ -61,7 +61,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" type="submit">Print</button>
-        <!--<button class="btn btn-primary" ng-click="clearLocalStorage()">Reset</button>
+        <button class="btn btn-primary" ng-click="clearLocalStorage()">Reset</button>
       </div>
     </div> -->
     <form ngNativeValidate (ngSubmit)="saveBill()">
@@ -70,7 +70,7 @@
           <div class="card mt-5" style="width: 60rem;">
               <div class="card-body">
                  
-                  <h3 style=" background-color:#357EBD; color:#FFF;text-center;text-align:center;">INVOICE</h3>
+                  <h3 style="background-color:#357EBD; color:#FFF; text-align:center;">INVOICE</h3>
                   <h6 class="card-title text-center">Covid-19 HMS</h6>
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" [(ngModel)]="bill.patientName"  #name="ngModel" required [class.is-invalid]="name.invalid && name.touched">

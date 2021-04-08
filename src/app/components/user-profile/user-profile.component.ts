@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Bill } from 'src/app/bill';
+import { General } from 'src/app/general';
 import { NavbarService } from 'src/app/services/navbar.service';
-
+import { RegistrationService } from 'src/app/services/registration.service';
+import { Vaccine } from 'src/vaccine';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,23 +12,62 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  currentId:any;
+  currentId:number;
   currentName:any;
   currentEmail:any;
+  secondDate:Date;
 
-  constructor( public nav: NavbarService) { }
+  general : General[];
+  vaccine :  Vaccine[];
+  bill : Bill[];
+
+  constructor(private _service: RegistrationService,public nav: NavbarService) { }
 
   ngOnInit(): void {
 
-
-    this.nav.show();
+    this.currentId = +sessionStorage.getItem('id');
+ 
+   this.nav.show();
     
-    this.currentId = sessionStorage.getItem('id');
+    this.currentId = +sessionStorage.getItem('id');
 
     this.currentName = sessionStorage.getItem('name');
    
     this.currentEmail = sessionStorage.getItem('email');
 
+    this.getTestAppointmentInfo();
+    this.getVaccineAppointmentInfo();
+    this.getInvoiceInfo();
+
   }
 
+  getTestAppointmentInfo(){
+
+    this._service.getTestAppointmentInfo(this.currentId).subscribe((data: General[])=>{
+      console.log(data);
+      this.general = data;
+    })
+  }
+
+  getVaccineAppointmentInfo(){
+
+    this._service.getVaccineAppointmentInfo(this.currentId).subscribe((data: Vaccine[])=>{
+      console.log(data);
+      this.vaccine = data;
+    })
+    
+  }
+
+  getInvoiceInfo(){
+
+    this._service.getInvoiceInfo(this.currentId).subscribe((data: Bill[])=>{
+      console.log(data);
+      this.bill = data;
+    })
+  }
+
+  getSecondDate(date: Date): Date {
+    date.setDate(date.getDate() + 28);
+    return date;
+}
 }

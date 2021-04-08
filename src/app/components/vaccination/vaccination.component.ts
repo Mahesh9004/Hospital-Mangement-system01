@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Vaccine } from 'src/vaccine';
+import { NavbarService } from 'src/app/services/navbar.service';
+
 
 @Component({
   selector: 'app-vaccination',
@@ -12,10 +14,11 @@ export class VaccinationComponent implements OnInit {
 
   result: String;
   vaccine = new Vaccine();
-
-  constructor(private _service: RegistrationService, private _router: Router) { }
+  
+  constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
+    this.nav.show();
     this.vaccine.patientId = +sessionStorage.getItem('id');
     this.vaccine.patientName = sessionStorage.getItem('name');
   }

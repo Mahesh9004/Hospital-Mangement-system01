@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { User } from 'src/user';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class NavbarComponent implements OnInit {
   currentEmail:any;
   hidden:boolean;
   id:number;
+  
   constructor(private _router: Router, public nav: NavbarService) {}
 
   
@@ -55,7 +57,9 @@ export class NavbarComponent implements OnInit {
     this.nav.hide();
   }
 
-
+  patientNav(){
+    this.nav.showPatient();
+  }
   
 
 

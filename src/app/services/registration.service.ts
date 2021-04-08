@@ -44,6 +44,7 @@ export class RegistrationService {
     return this._http.post<any>("http://localhost:8080/generalappointment",general);
   }
 
+
   public confirmAppointment(v:Vaccine):Observable<any>{
     return this._http.post<String>("http://localhost:8080/vaccination",v);
   }
@@ -52,15 +53,29 @@ export class RegistrationService {
     console.log("In get approve appointment pid = "+patientId)
     return this._http.get<any>('http://localhost:8080/approveAppointment/'+patientId);
   }
+  public saveBillFromRemote(b: Bill):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/bill",b);
+  }
+
+  
+ 
+  //get methods
+ 
  
 
 
 
 
+
   //get methods
-  public saveBillFromRemote(b: Bill):Observable<any>{
-    return this._http.post<any>("http://localhost:8080/bill",b);
+
+
+
+  public vaccinePendingAppointments():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/vaccinependingappointments");
+
   }
+
 
   public patientBillHistory():Observable<any>{
     return this._http.get<any>("http://localhost:8080/billhistory");

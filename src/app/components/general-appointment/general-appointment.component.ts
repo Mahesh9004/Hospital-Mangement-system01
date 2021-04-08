@@ -3,6 +3,8 @@ import {Router} from "@angular/router";
 import { RegistrationService } from 'src/app/services/registration.service';
 import { General } from 'src/app/general';
 import { NgForm } from '@angular/forms';
+import { NavbarService } from 'src/app/services/navbar.service';
+
 
 @Component({
   selector: 'app-general-appointment',
@@ -16,9 +18,10 @@ export class GeneralAppointmentComponent implements OnInit {
   currentName:any;
   
   msg='';
-  constructor(private _router: Router, private _service: RegistrationService) { }
+  constructor(private _router: Router, private _service: RegistrationService,  public nav: NavbarService) { }
 
   ngOnInit(): void {
+    this.nav.show();
     this.general.userName = sessionStorage.getItem('name');
     this.general.patientId = +sessionStorage.getItem('id');
   }

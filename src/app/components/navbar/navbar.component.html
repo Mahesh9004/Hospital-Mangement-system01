@@ -3,26 +3,40 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav" *ngIf="nav.visible">
+    <div class="collapse navbar-collapse row" id="navbarNav" *ngIf="nav.visible">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" routerLink='home'>Home <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink='countries'>Countries</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"  routerLink='vaccination' >Vaccination</a>
-            </li>
-            <li class="nav-item" >
-                <a class="nav-link"  routerLink='general-appointment'>Test Appointment</a>
-            </li>
+           
+            
+                <li class="nav-item active" >
+                    <a class="nav-link" routerLink='home'>Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item"  >
+                    <a class="nav-link" routerLink='countries'>Countries</a>
+                </li>
+                <li class="nav-item"  >
+                    <a class="nav-link"  routerLink='vaccination' >Vaccination</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link"  routerLink='general-appointment'>Test Appointment</a>
+                </li>
+                <li class="nav-item"   >
+                    <a class="nav-link"  routerLink='userprofile' >User Profile</a>
+                </li>
+             
+
+
             <li class="nav-item" ng-hide="isHidden"  >
                 <a class="nav-link"  routerLink='pending-appointment'>Pending Appointment</a>
             </li>
             <li class="nav-item"  >
-                <a class="nav-link"  routerLink='userprofile' >User Profile</a>
+                <a class="nav-link"  routerLink='patienthistory' >Invoice History</a>
             </li>
+            <li class="nav-item"  >
+                <a class="nav-link"  routerLink='vaccinependingappointments' >Vaccination Appointment's</a>
+            </li>
+
+
+          
             <li class="nav-item"   >
                 <a class="nav-link"  routerLink='invoice'  >Invoice</a>
             </li>
@@ -34,6 +48,10 @@
             <li class="nav-item"  >
                 <a class="nav-link"  routerLink='patienthistory' >Patient History</a>
             </li>
+            <li class="nav-item"   >
+                <a class="nav-link"  routerLink='registerdoctor'  >Doctor Registration</a>
+            </li>
+          
         </ul>  
         
     </div>

@@ -73,17 +73,17 @@
                   <h3 style="background-color:#357EBD; color:#FFF; text-align:center;">INVOICE</h3>
                   <h6 class="card-title text-center">Covid-19 HMS</h6>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" [(ngModel)]="bill.patientName">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" [(ngModel)]="bill.patientName" required>
                     <label for="name">Patient Name</label>
                   </div>
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Description" id="description" name="description" style="height: 100px"  [(ngModel)]="bill.patientDescription"></textarea>
+                    <textarea class="form-control" placeholder="Description" id="description" name="description" style="height: 100px"  [(ngModel)]="bill.patientDescription" required></textarea>
                     <label for="description">Patient Description</label>
                   </div>
                   <br>
                   
                         <div class="form-floating mb-3" >
-                          <input type="text" class="form-control" id="amount" name="amount" placeholder="  Enter Amount"  [(ngModel)]="bill.totalAmount">
+                          <input type="text" class="form-control" id="amount" name="amount" placeholder="  Enter Amount"  [(ngModel)]="bill.totalAmount" required>
                           <label for="amount">Total Amount</label>
                         </div>
             

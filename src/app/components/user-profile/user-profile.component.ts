@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bill } from 'src/app/bill';
 import { General } from 'src/app/general';
+import { NavbarService } from 'src/app/services/navbar.service';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Vaccine } from 'src/vaccine';
 
@@ -20,10 +21,14 @@ export class UserProfileComponent implements OnInit {
   vaccine :  Vaccine[];
   bill : Bill[];
 
-  constructor(private _service: RegistrationService) { }
+  constructor(private _service: RegistrationService,public nav: NavbarService) { }
 
   ngOnInit(): void {
 
+    this.currentId = +sessionStorage.getItem('id');
+ 
+   this.nav.show();
+    
     this.currentId = +sessionStorage.getItem('id');
 
     this.currentName = sessionStorage.getItem('name');

@@ -24,6 +24,7 @@ import { DoctorregistrationComponent } from './components/doctorregistration/doc
 import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
 import { BillComponent } from './components/bill/bill.component';
 import { PatientHistoryComponent } from './components/patient-history/patient-history.component';
+import { PendingVaccinationAppointmentComponent } from './components/pending-vaccination-appointment/pending-vaccination-appointment.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { PatientHistoryComponent } from './components/patient-history/patient-hi
     AdminloginComponent,
     BillComponent,
     PatientHistoryComponent,
+    PendingVaccinationAppointmentComponent,
   ],
   imports: [
     BrowserModule,

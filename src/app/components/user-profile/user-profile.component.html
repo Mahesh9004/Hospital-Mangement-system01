@@ -15,7 +15,6 @@
 
   </div>
 
-
   <div class="col">
 
     <div class="col d-flex justify-content-center">
@@ -26,13 +25,14 @@
                 <ng-container *ngFor="let gen of general">
                 <tr>
                   <td><p style="color:grey">Status: </p></td>
-                  <td><p style="color:grey">Pending </p></td>
+                  <td><p style="color:grey">{{gen.status}} </p></td>
                 </tr>
                 <tr>
                   <td><p style="color:grey">Appointment Date: </p></td>
                   <td><p style="color:grey">{{gen.appointmentDate | date:'fullDate'}} </p></td>
                 </tr>
-              </ng-container>
+                <button class="btn btn-danger" (click)="deleteGeneralAppointment(gen.id)">Cancel Appointment</button>
+               </ng-container>
               </table>
               <p *ngIf="!general?.length" style="color:grey">Not Applicable </p>
           </div>
@@ -46,7 +46,6 @@
 </div>
 
 
-
 <div class="row">
   <div class="col">
 
@@ -58,7 +57,7 @@
                 <ng-container *ngFor="let v of vaccine">
                 <tr>
                   <td><p style="color:grey">Status: </p></td>
-                  <td><p style="color:grey">Pending </p></td>
+                  <td><p style="color:grey">Approved </p></td>
                 </tr>
                 <tr>
                   <td><p style="color:grey">Appointment Date: </p></td>
@@ -67,7 +66,12 @@
                 <tr>
                   <td><p style="color:grey">Date for Second Dose of Vaccination: </p></td>
                   <td><p style="color:grey">{{getSecondDate(v.date) | date:'fullDate' }} at {{v.time }} </p></td>
+
+                    </tr>
+                    <button class="btn btn-danger" (click)="deleteVaccineAppointment(v.id)">Cancel Appointment</button>
+
                 </tr>
+
               </ng-container>
               </table>
               <p *ngIf="!vaccine?.length" style="color:grey">Not Applicable </p>

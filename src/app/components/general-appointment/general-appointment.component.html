@@ -17,7 +17,7 @@
             <td>
                 
                 <div class="col-md-4">
-                    <input class="form-control" type="date"   name="date"  [(ngModel)]="general.appointmentDate" required>
+                    <input class="form-control" type="date" [min]="minDate | date:'yyyy-MM-dd'"  name="date"  [(ngModel)]="general.appointmentDate" required>
                 </div>
             </td>
         </tr>

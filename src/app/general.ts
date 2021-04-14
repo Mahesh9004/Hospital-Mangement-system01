@@ -7,6 +7,7 @@ export class General {
     fever: string;
     lossOfTaste: string;
     breath: string;
+    status: String;
     
     constructor(){}
 }

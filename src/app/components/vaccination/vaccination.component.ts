@@ -14,6 +14,9 @@ export class VaccinationComponent implements OnInit {
 
   result: String;
   vaccine = new Vaccine();
+  v: Vaccine[];
+  flag:boolean;
+  minDate:Date;
   
   
   constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
@@ -23,13 +26,17 @@ export class VaccinationComponent implements OnInit {
     this.vaccine.patientId = +sessionStorage.getItem('id');
     this.vaccine.patientName = sessionStorage.getItem('name');
 
-
+    //this.minDate = this.minDate.setDate(new Date(), 'yyyy-MM-dd');
+    //this.minDate = new Date().toISOString().split('T')[0];
+    this.minDate = new Date();
+    console.log(this.minDate)
   }
 
 
   checkVaccineAppointment() {
-  
-    this._service.registerVaccineAppointment(this.vaccine).subscribe(
+    this.checkAlreadyTaken();
+    if(this.flag){
+      this._service.registerVaccineAppointment(this.vaccine).subscribe(
       data => {
        // this.result = this._service.confirmAppointment();
        this.confirmationAppointment();
@@ -43,12 +50,23 @@ export class VaccinationComponent implements OnInit {
 
       }
     );
-
-
-
-    
   }
+}
 
+  checkAlreadyTaken(){
+    this._service.getVaccineAppointmentInfo(+sessionStorage.getItem('id')).subscribe((data: Vaccine[])=>{
+      console.log(data);
+      this.v = data;
+    })
+
+    this.flag =true;
+    
+    if(this.v.length != 0){
+      alert("You have already taken the appointment !!")
+      this.flag = false;
+      this._router.navigate(['/home']);
+    }
+  }
 
   confirmationAppointment(){
     this._service.confirmAppointment(this.vaccine)

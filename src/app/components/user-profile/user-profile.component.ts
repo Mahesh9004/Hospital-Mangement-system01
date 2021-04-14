@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Bill } from 'src/app/bill';
 import { General } from 'src/app/general';
@@ -21,7 +22,7 @@ export class UserProfileComponent implements OnInit {
   vaccine :  Vaccine[];
   bill : Bill[];
 
-  constructor(private _service: RegistrationService,public nav: NavbarService) { }
+  constructor(private _service: RegistrationService,private http: HttpClient,public nav: NavbarService) { }
 
   ngOnInit(): void {
 
@@ -71,4 +72,20 @@ export class UserProfileComponent implements OnInit {
     this.secondDate.setDate(this.secondDate.getDate() + 28);
     return this.secondDate;
  }
+
+ deleteGeneralAppointment(id){
+    
+  this.http.delete('http://localhost:8080/deleteappointment/'+id)
+          .subscribe(() =>  {
+            alert('Covid-19 Test Appointment deleted for Patient With Id '+id);
+          })
+  }
+
+  deleteVaccineAppointment(id){
+    
+    this.http.delete('http://localhost:8080/deletevaccineappointment/'+id)
+            .subscribe(() =>  {
+              alert('Vaccine Appointment deleted for Patient With Id '+id);
+            })
+    }
 }

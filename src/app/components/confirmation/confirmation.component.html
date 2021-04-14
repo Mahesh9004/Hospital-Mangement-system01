@@ -5,9 +5,32 @@
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Congratulation's, {{currentName | titlecase}} you have successfully submitted the questionnaire.
+        <p>Congratulation's, {{currentName | titlecase}} you have successfully submitted the questionnaire on {{currentappointmentDate}} with following answer's.
             Your'e test appointment is pending with our hospital very soon you will get the confirmation
             mail on your'e registered mail Id. </p>
+            <br>
+            <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th> Do you have dry cough?</th>
+                    <th> Do you have fever?</th>
+                    <th>Loss of taste or smell ?</th>
+                    <th> Difficulty in breathing or shortness of breath ?</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{currentQ1  | titlecase}}</td>
+                  <td>{{currentQ2 | titlecase}}</td>
+                  <td>{{currentQ3 | titlecase}}</td>
+                  <td>{{currentQ4 | titlecase}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <div class="text-center">
+              <button class="btn btn-danger" (click)="cancelAppointment(this.currentsubmittedId)">Cancel Appointment</button>
+             </div>
         <footer class="blockquote-footer">Covid-19 HMS<cite title="Source Title"></cite></footer>
       </blockquote>
     </div>

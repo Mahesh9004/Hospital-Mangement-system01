@@ -28,9 +28,13 @@
                 </thead>
 
                 <tbody>
+
                     <tr *ngFor='let cs of selectedCountryData.slice().reverse() | paginate: { itemsPerPage: 9, currentPage: p }'>
                         <td>{{cs.date | date}}</td>
                         <td>{{cs.cases | number}}</td>
+                    <tr *ngFor='let cs of selectedCountryData | paginate: { itemsPerPage: 9, currentPage: p } '  >
+                        <td>{{cs.date | date }}</td>
+                        <td>{{cs.cases | number }}</td>
                     </tr>
                 </tbody>
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>

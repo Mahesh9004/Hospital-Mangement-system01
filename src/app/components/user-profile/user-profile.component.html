@@ -15,8 +15,6 @@
 
   </div>
 
-
-
   <div class="col">
 
     <div class="col d-flex justify-content-center">
@@ -68,8 +66,12 @@
                 <tr>
                   <td><p style="color:grey">Date for Second Dose of Vaccination: </p></td>
                   <td><p style="color:grey">{{getSecondDate(v.date) | date:'fullDate' }} at {{v.time }} </p></td>
+
                     </tr>
                     <button class="btn btn-danger" (click)="deleteVaccineAppointment(v.id)">Cancel Appointment</button>
+
+                </tr>
+
               </ng-container>
               </table>
               <p *ngIf="!vaccine?.length" style="color:grey">Not Applicable </p>

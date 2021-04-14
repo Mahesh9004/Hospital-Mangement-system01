@@ -40,6 +40,10 @@ export class ConfirmationComponent implements OnInit {
   }
 
 
+  confirmApp(){
+    this._router.navigate(['/home']);
+  }
+
   cancelAppointment(id){
     
     this.http.delete('http://localhost:8080/cancelappointment/'+id)

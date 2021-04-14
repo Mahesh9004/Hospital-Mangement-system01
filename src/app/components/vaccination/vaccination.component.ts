@@ -15,12 +15,15 @@ export class VaccinationComponent implements OnInit {
   result: String;
   vaccine = new Vaccine();
   
+  
   constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
     this.nav.show();
     this.vaccine.patientId = +sessionStorage.getItem('id');
     this.vaccine.patientName = sessionStorage.getItem('name');
+
+
   }
 
 
@@ -31,10 +34,11 @@ export class VaccinationComponent implements OnInit {
        // this.result = this._service.confirmAppointment();
        this.confirmationAppointment();
         console.log('response received');
-        this._router.navigate(['/home']);
+        this._router.navigate(['/confirmvaccination']);
       },
       error => {
         console.log('exception occurred');
+        alert('You already have an appointment on this date ! please select any other date to proceed further.');
         //this.msg= error.error;
 
       }

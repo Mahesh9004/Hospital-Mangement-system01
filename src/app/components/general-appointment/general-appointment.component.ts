@@ -16,9 +16,10 @@ export class GeneralAppointmentComponent implements OnInit {
   yes = false;
   no = false;
   currentName:any;
-  
+  gen: General[];
+  flag:boolean;
   msg='';
-  today=new Date();
+  minDate:Date;
   constructor(private _router: Router, private _service: RegistrationService,  public nav: NavbarService) { }
 
   
@@ -27,6 +28,7 @@ export class GeneralAppointmentComponent implements OnInit {
     this.nav.show();
     this.general.userName = sessionStorage.getItem('name');
     this.general.patientId = +sessionStorage.getItem('id');
+    this.minDate = new Date();
   }
 
   onSubmit(){
@@ -35,9 +37,26 @@ export class GeneralAppointmentComponent implements OnInit {
   }
 
 
+  checkAlreadyTaken(){
+    this._service.getTestAppointmentInfo(+sessionStorage.getItem('id')).subscribe((data: General[])=>{
+      console.log(data);
+      this.gen = data;
+    })
+
+    this.flag =true;
+
+    if(this.gen.length != 0){
+      alert("You have already taken the appointment !!")
+      this.flag =false;
+      this._router.navigate(['/home']);
+    }
+  }
 
   saveAppointment(){
-    this._service.generalAppointmentFromRemote(this.general).subscribe(
+    this.checkAlreadyTaken();
+    if(this.flag){
+      this.general.status = "Pending"
+      this._service.generalAppointmentFromRemote(this.general).subscribe(
       data=>{
         console.log('appointment received');
         
@@ -49,6 +68,7 @@ export class GeneralAppointmentComponent implements OnInit {
         
       }
     )
+  }
   }
 
 

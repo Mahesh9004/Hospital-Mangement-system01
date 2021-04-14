@@ -28,10 +28,14 @@
           <td>{{ general.breath}}</td>
 
         
-          <td>
+          <td *ngIf="approveShow && declineShow">
             <button class="btn btn-primary" (click)="approveAppointment(general.patientId)">Approve</button> 
               &nbsp; &nbsp;
             <button class="btn btn-danger" (click)="deleteRow(general.id)">Decline</button></td>
+            <td *ngIf="!approveShow"><button  [disabled]="true" class="btn btn-primary">Approved</button></td>
+            <td *ngIf="!declineShow"><button  [disabled]="true" class="btn btn-danger">Declined</button></td>
+          
+           
         </tr>
       </tbody>
       <pagination-controls (pageChange)="p = $event"></pagination-controls>

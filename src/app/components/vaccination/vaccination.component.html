@@ -19,7 +19,7 @@
 							
 							<div class="col-md-4">
 								<div class="form-group">
-									<input class="form-control" name="date" [(ngModel)]="vaccine.date" type="date" required>
+									<input class="form-control" id="date" name="date" [(ngModel)]="vaccine.date" type="date" [min]="minDate | date:'yyyy-MM-dd'" required>
 									<span class="form-label">Date</span>
 								</div>
 							</div>

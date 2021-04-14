@@ -16,7 +16,8 @@ export class PendingAppointmentComponent implements OnInit {
   generalappointments : General[];
 
   response:String;
-
+  approveShow:boolean = true;
+  declineShow:boolean = true;
   p : number = 1;
 
   
@@ -37,6 +38,7 @@ export class PendingAppointmentComponent implements OnInit {
 
 
   approveAppointment(pid:number) {
+    this.approveShow = !this.approveShow;
     console.log("In approve appointment with pid ="+pid)
     this._service.approveAppointment(pid).subscribe((res) => {
       this.response = res;
@@ -45,7 +47,7 @@ export class PendingAppointmentComponent implements OnInit {
   }
 
 deleteRow(id){
-    
+    this.declineShow = !this.declineShow;
 this.http.delete('http://localhost:8080/deleteappointment/'+id)
         .subscribe(() =>  {
           alert('Appointment deleted for Patient With Id '+id);

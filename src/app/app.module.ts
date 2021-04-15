@@ -28,6 +28,7 @@ import { AlldoctorComponent } from './components/alldoctor/alldoctor.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ConfirmVaccinationComponent } from './components/confirm-vaccination/confirm-vaccination.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ConfirmVaccinationComponent } from './components/confirm-vaccination/co
     AlldoctorComponent,
     ConfirmationComponent,
     ConfirmVaccinationComponent,
+    RoomsComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,7 @@ import { AllpatientComponent } from './components/allpatient/allpatient.componen
 import { AlldoctorComponent } from './components/alldoctor/alldoctor.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ConfirmVaccinationComponent } from './components/confirm-vaccination/confirm-vaccination.component';
+import { RoomsComponent } from './components/rooms/rooms.component';
 
 
 const routes: Routes = [
@@ -33,7 +34,6 @@ const routes: Routes = [
   {path: 'pending-appointment', component: PendingAppointmentComponent},
   {path: 'userprofile', component: UserProfileComponent},
   {path: 'invoice', component: InvoiceComponent},
-  {path: '' , component: LoginComponent},
   {path: 'registerdoctor', component: DoctorregistrationComponent},
   {path: 'logindoctor', component: DoctorloginComponent},
   {path: 'loginadmin', component: AdminloginComponent},
@@ -43,7 +43,7 @@ const routes: Routes = [
   {path: 'alldoctor' , component: AlldoctorComponent},
   {path: 'confirmation', component: ConfirmationComponent},
   {path: 'confirmvaccination', component: ConfirmVaccinationComponent},
-
+  {path: 'rooms', component: RoomsComponent},
 
 ];
 

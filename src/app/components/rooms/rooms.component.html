@@ -16,8 +16,8 @@
                 <label for="name">Patient ID</label>
             </div>
             <div class="form-floating mb-3" *ngFor="let g of gen">
-                <input type="text" class="form-control"  id="patientName" name="patientName" [ng-value]="g.userName" placeholder="Enter patient Name" [(ngModel)]="roomManagement.patientName" required>
-                <label for="patientName">{{g.userName}}</label>
+               <input type="text" class="form-control"  id="patientName" name="patientName" [disabled]="true" [ng-value]="g.userName" placeholder="Enter patient Name" ngModel="{{g.userName}}" required>
+                <label for="patientName">Patient Name</label>
             </div>
             <div class="form-floating mb-3 pull-right">
                 <select id="ddlFilter" (change)="getTypes($event)"  class="ddlFilter form-control input-sm input-small input-inline">
@@ -47,7 +47,7 @@
         <div class="card-body">
             <h3 class="card-title text-primary">Add New Room</h3>&nbsp;&nbsp;&nbsp;
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="roomId" name="roomId" placeholder="Enter Room Id" [(ngModel)]="room.id" required>
+                <input type="text" class="form-control" id="roomId" name="roomId" placeholder="Enter Room Id" ngModel="{{newRoom}}" [disabled]="true" required>
                 <label for="name">Room Number</label>
             </div>
             <div class="form-floating mb-3">
@@ -71,7 +71,7 @@
             <h3 class="card-title text-primary">Delete Room</h3>&nbsp;&nbsp;&nbsp;
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" #roomno id="patientId" name="patientId" placeholder="Enter patient Id" [(ngModel)]="roomManagement.patientId" required>
-                <label for="name">Patient ID</label>
+                <label for="name">Room Number</label>
             </div>
             <div class="text-center">
                 <button class="btn btn-primary" (click)="deleteBed(roomno.value)">Delete </button> &nbsp; &nbsp;

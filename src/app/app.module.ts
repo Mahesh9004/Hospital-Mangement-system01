@@ -29,6 +29,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ConfirmVaccinationComponent } from './components/confirm-vaccination/confirm-vaccination.component';
 import { RoomsComponent } from './components/rooms/rooms.component';
+import { RoomstatusComponent } from './components/roomstatus/roomstatus.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { RoomsComponent } from './components/rooms/rooms.component';
     ConfirmationComponent,
     ConfirmVaccinationComponent,
     RoomsComponent,
+    RoomstatusComponent,
   ],
   imports: [
     BrowserModule,

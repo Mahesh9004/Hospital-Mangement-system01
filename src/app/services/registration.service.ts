@@ -71,6 +71,10 @@ export class RegistrationService {
     return this._http.get<any>('http://localhost:8080/getRoomInfo');
   } 
 
+  public getRoomStatusInfo():Observable<any>{
+    return this._http.get<any>('http://localhost:8080/getRoomStatusInfo');
+  }
+
   public GetRoomInfoByPid(patientId: Number):Observable<any>{
     return this._http.get<any>('http://localhost:8080/getRoomInfoByPid/'+patientId);
   }

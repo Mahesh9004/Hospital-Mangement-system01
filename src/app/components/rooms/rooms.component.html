@@ -1,0 +1,87 @@
+
+
+<div class="content-wrapper" id="divPageBody">
+                
+    <section class="content-header">
+        <h1>Bed Allotments</h1>
+        <button class="btn btn-primary" (click)="bedalot()" *ngIf="!bedalottment">Bed  Allotments</button>
+        <button class="btn btn-primary" (click)="addNewRoom()" *ngIf="bedalottment">Add New Room </button> &nbsp; &nbsp;
+        <button class="btn btn-danger" (click)="deleteRoom()">Delete Room </button>
+    </section>
+</div>
+<div class="col d-flex justify-content-center" *ngIf="bedalottment">
+    <div class="card mt-5" style="width: 30rem;">
+        <div class="card-body">
+            <h3 class="card-title text-primary">Bed Allotments</h3>&nbsp;&nbsp;&nbsp;
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="patientId" (change)="getName($event)" name="patientId" placeholder="Enter patient Id" [(ngModel)]="roomManagement.patientId" required>
+                <label for="name">Patient ID</label>
+            </div>
+            <div class="form-floating mb-3" *ngFor="let g of gen">
+               <input type="text" class="form-control"  id="patientName" name="patientName" [disabled]="true" [ng-value]="g.userName" placeholder="Enter patient Name" ngModel="{{g.userName}}" required>
+                <label for="patientName">Patient Name</label>
+            </div>
+            <div class="form-floating mb-3 pull-right">
+                <select id="ddlFilter" (change)="getTypes($event)"  class="ddlFilter form-control input-sm input-small input-inline">
+                    <option value="-- Select --">-- Select --</option>
+                    <option *ngFor="let r of rooms"  value="{{r.roomType}}">{{r.roomType}}</option>  
+                </select>
+                <label for="name">Room Type</label>
+            </div>
+            <div class="form-floating mb-3 pull-right">
+                <select id="ddlFilter"  [(ngModel)]="roomManagement.roomNo" (change)="getAvailableRooms($event)" class="ddlFilter form-control input-sm input-small input-inline">
+                    <option value="-- Select --">-- Select --</option>
+                    <option *ngFor="let r of roomsNo"  value="{{r.id}}">{{r.id}}</option> 
+                 </select>
+                <label for="name">Available Rooms</label>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="confirmBed()">Confirm </button> &nbsp; &nbsp;
+                <button class="btn btn-danger" (click)="cancelBed()">Cancel </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col d-flex justify-content-center" *ngIf="addroom">
+    <div class="card mt-5" style="width: 30rem;">
+        <div class="card-body">
+            <h3 class="card-title text-primary">Add New Room</h3>&nbsp;&nbsp;&nbsp;
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="roomId" name="roomId" placeholder="Enter Room Id" ngModel="{{newRoom}}" [disabled]="true" required>
+                <label for="name">Room Number</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="roomType" name="roomType" placeholder="Enter Room Type" [(ngModel)]="room.roomType" required>
+                <label for="name">Room Type</label>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="confirmAddRoom()">Confirm </button> &nbsp; &nbsp;
+                <button class="btn btn-danger" (click)="cancelRoom()">Cancel </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="col d-flex justify-content-center" *ngIf="delroom">
+    <div class="card mt-5" style="width: 30rem;">
+        <div class="card-body">
+            <h3 class="card-title text-primary">Delete Room</h3>&nbsp;&nbsp;&nbsp;
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" #roomno id="patientId" name="patientId" placeholder="Enter patient Id" [(ngModel)]="roomManagement.patientId" required>
+                <label for="name">Room Number</label>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="deleteBed(roomno.value)">Delete </button> &nbsp; &nbsp;
+                <button class="btn btn-danger" (click)="bedalot()">Cancel </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+   

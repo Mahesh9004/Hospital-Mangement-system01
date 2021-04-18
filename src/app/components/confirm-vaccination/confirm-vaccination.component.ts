@@ -23,5 +23,7 @@ export class ConfirmVaccinationComponent implements OnInit {
     this.currentName = sessionStorage.getItem('name');
   }
   
- 
+  confirmApp(){
+    this._router.navigate(['/home']);
+  }
 }

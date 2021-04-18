@@ -68,7 +68,6 @@ export class GeneralAppointmentComponent implements OnInit {
       data=>{
         console.log('appointment received');
 
-       
 
         sessionStorage.setItem('drycough',this.general.dryCough);
         this.q1 = sessionStorage.getItem('drycough');
@@ -88,10 +87,6 @@ export class GeneralAppointmentComponent implements OnInit {
 
         sessionStorage.setItem('date',this.general.appointmentDate);
         this.currentDate = sessionStorage.getItem('date');
-
-        
-
-        
 
         
         this._router.navigate(['/confirmation']);

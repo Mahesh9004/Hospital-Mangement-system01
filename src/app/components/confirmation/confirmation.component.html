@@ -5,9 +5,9 @@
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Congratulation's, {{currentName | titlecase}} you have successfully submitted the questionnaire on {{currentappointmentDate}} with following answer's.
-            Your'e test appointment is pending with our hospital very soon you will get the confirmation
-            mail on your'e registered mail Id. </p>
+        <p>Congratulations, {{currentName | titlecase}} you have successfully submitted the questionnaire for Covid-19 Test appointment on {{currentappointmentDate | date:'fullDate' }}.<br>
+            Please confirm your appointment and our hospital very soon you will get the confirmation
+            mail on your registered mail Id. </p>
             <br>
             <table class="table table-striped">
               <thead>
@@ -29,6 +29,7 @@
             </table>
             <br>
             <div class="text-center">
+              <button class="btn btn-primary" (click)="confirmApp()">Confirm Appointment</button> &nbsp; &nbsp;
               <button class="btn btn-danger" (click)="cancelAppointment(this.currentsubmittedId)">Cancel Appointment</button>
              </div>
         <footer class="blockquote-footer">Covid-19 HMS<cite title="Source Title"></cite></footer>

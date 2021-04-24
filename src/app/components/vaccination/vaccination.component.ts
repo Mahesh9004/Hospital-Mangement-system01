@@ -23,6 +23,8 @@ export class VaccinationComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.show();
+    
+    
     this.vaccine.patientId = +sessionStorage.getItem('id');
     this.vaccine.patientName = sessionStorage.getItem('name');
 
@@ -32,9 +34,27 @@ export class VaccinationComponent implements OnInit {
     console.log(this.minDate)
   }
 
+  checkAlreadyTaken() : boolean{
+      this._service.getVaccineAppointmentInfo(+sessionStorage.getItem('id')).subscribe((data: Vaccine[])=>{
+      console.log(data);
+      this.v = data;
+
+      this.flag =true;
+    
+      if(this.v.length != 0){
+        alert("You have already taken the appointment !!")
+        this.flag = false;
+        this._router.navigate(['/home']);
+        
+      }
+    })
+    return this.flag;
+  }
+
 
   checkVaccineAppointment() {
-    this.checkAlreadyTaken();
+    this.flag = this.checkAlreadyTaken();
+    
     if(this.flag){
       this._service.registerVaccineAppointment(this.vaccine).subscribe(
       data => {
@@ -53,21 +73,7 @@ export class VaccinationComponent implements OnInit {
   }
 }
 
-  checkAlreadyTaken(){
-    this._service.getVaccineAppointmentInfo(+sessionStorage.getItem('id')).subscribe((data: Vaccine[])=>{
-      console.log(data);
-      this.v = data;
-    })
-
-    this.flag =true;
-    
-    if(this.v.length != 0){
-      alert("You have already taken the appointment !!")
-      this.flag = false;
-      this._router.navigate(['/home']);
-    }
-  }
-
+  
   confirmationAppointment(){
     this._service.confirmAppointment(this.vaccine)
         .subscribe(

@@ -6,6 +6,7 @@ import { General } from 'src/app/general';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Room } from '../room';
 import { RoomManagement } from '../roomManagement';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-rooms',
@@ -25,14 +26,14 @@ export class RoomsComponent implements OnInit {
   addroom:boolean;
   bedalottment:boolean;
   delroom:boolean;
-  constructor(private _service: RegistrationService, private _router: Router,private http: HttpClient) { }
+  constructor(private _service: RegistrationService, private _router: Router,private http: HttpClient, public nav: NavbarService) { }
 
   ngOnInit(): void {
     this.addroom =false;
     this.bedalottment =true;
     this.delroom =false;
 
-
+    this.nav.show();
     this._service.getRoomInfo().subscribe((data: Room[])=>{
       console.log(data);
       this.rooms = data;
@@ -49,7 +50,9 @@ export class RoomsComponent implements OnInit {
     this.bedalottment =false;
     this.delroom =false;
     //console.log("last room "+this.rooms[this.rooms.length-1].id);
+    
     this.newRoom = (+this.rooms[this.rooms.length-1].id)+1;
+    
   }
   deleteRoom(){
     this.addroom =false;
@@ -106,6 +109,8 @@ export class RoomsComponent implements OnInit {
       this._service.confirmBedAlloted(this.roomManagement).subscribe((data: RoomManagement)=>{
         console.log(data);
       // this.bill = data;
+      alert('Patient added successfully!');
+     this._router.navigate(['/rooms']);
       })}
   }
   cancelBed(){
@@ -116,9 +121,12 @@ export class RoomsComponent implements OnInit {
     this.room.status="Available"
     this._service.confirmAddRoom(this.room).subscribe((data: Room)=>{
       console.log(data);
-     // this.bill = data;
+      alert('Room added successfully!');
+      this._router.navigate(['/rooms']);
+     
+     
     })
-    this._router.navigate(['/home']);
+    
   }
 
   deleteBed(id:Number){

@@ -5,6 +5,7 @@ import { RegistrationService } from 'src/app/services/registration.service';
 import { Room } from '../room';
 import { RoomManagement } from '../roomManagement';
 
+
 @Component({
   selector: 'app-roomstatus',
   templateUrl: './roomstatus.component.html',
@@ -29,5 +30,13 @@ export class RoomstatusComponent implements OnInit {
          })
 
   }
+
+  Discharge(id){
+this.http.delete('http://localhost:8080/dischargePatient/'+id)
+        .subscribe(() =>  {
+          alert('Patient discharge from room no.  '+id);
+        })
+}
+
 
 }

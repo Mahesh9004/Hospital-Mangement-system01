@@ -25,6 +25,7 @@ export class PendingAppointmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.nav.show();
+    
     //this.nav.showPatient();
     //this.nav.showDoctor();
     //this.nav.showAdmin();

@@ -34,9 +34,10 @@ export class GeneralAppointmentComponent implements OnInit {
   
   ngOnInit(): void {
     
+
     this.nav.show();
+    this.checkAlreadyTaken();
     
-   
     this.general.userName = sessionStorage.getItem('name');
     
     this.general.patientId = +sessionStorage.getItem('id');
@@ -66,7 +67,7 @@ export class GeneralAppointmentComponent implements OnInit {
   }
 
   saveAppointment(){
-   this.flag =  this.checkAlreadyTaken();
+  //  this.flag =  this.checkAlreadyTaken();
    console.log(this.flag);
     if(this.flag){
       this.general.status = "Pending"

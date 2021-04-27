@@ -34,6 +34,7 @@ export class RoomsComponent implements OnInit {
     this.delroom =false;
 
     this.nav.show();
+    
     this._service.getRoomInfo().subscribe((data: Room[])=>{
       console.log(data);
       this.rooms = data;
@@ -110,7 +111,7 @@ export class RoomsComponent implements OnInit {
         console.log(data);
       // this.bill = data;
       alert('Patient added successfully!');
-     this._router.navigate(['/rooms']);
+     this._router.navigate(['/room-status']);
       })}
   }
   cancelBed(){
@@ -122,7 +123,7 @@ export class RoomsComponent implements OnInit {
     this._service.confirmAddRoom(this.room).subscribe((data: Room)=>{
       console.log(data);
       alert('Room added successfully!');
-      this._router.navigate(['/rooms']);
+      this._router.navigate(['/room-status']);
      
      
     })
@@ -134,6 +135,7 @@ export class RoomsComponent implements OnInit {
     this.http.delete('http://localhost:8080/deleteBed/'+id)
           .subscribe(() =>  {
             alert('Room No: '+id+' is deleted');
+            this._router.navigate(['/room-status']);
           })
   }
 

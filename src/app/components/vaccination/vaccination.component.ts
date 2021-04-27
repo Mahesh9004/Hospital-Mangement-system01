@@ -24,7 +24,7 @@ export class VaccinationComponent implements OnInit {
   ngOnInit(): void {
     this.nav.show();
     
-    
+    this.checkAlreadyTaken();
     this.vaccine.patientId = +sessionStorage.getItem('id');
     this.vaccine.patientName = sessionStorage.getItem('name');
 
@@ -53,12 +53,13 @@ export class VaccinationComponent implements OnInit {
 
 
   checkVaccineAppointment() {
-    this.flag = this.checkAlreadyTaken();
+    //this.flag = this.checkAlreadyTaken();
     
     if(this.flag){
       this._service.registerVaccineAppointment(this.vaccine).subscribe(
       data => {
        // this.result = this._service.confirmAppointment();
+       
        this.confirmationAppointment();
         console.log('response received');
         this._router.navigate(['/confirmvaccination']);

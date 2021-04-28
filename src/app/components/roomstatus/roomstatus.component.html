@@ -20,7 +20,7 @@
             <ng-container *ngFor="let rm of roomMan">
               <p *ngIf="r.id === rm.roomNo">{{rm.patientName}}</p>
             </ng-container>
-          </td>
+          </td>&nbsp;
         </tr>
       </tbody>
       <pagination-controls (pageChange)="p = $event"></pagination-controls>

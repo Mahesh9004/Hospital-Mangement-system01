@@ -69,7 +69,7 @@ export class UserProfileComponent implements OnInit {
 
   getSecondDate(date: Date): Date {
     this.secondDate = new Date(date);
-    this.secondDate.setDate(this.secondDate.getDate() + 28);
+    this.secondDate.setDate(this.secondDate.getDate() + 56);
     return this.secondDate;
  }
 

@@ -37,6 +37,7 @@ export class RoomsComponent implements OnInit {
       console.log(data);
       this.rooms = data;
     })
+
   }
 
   bedalot(){
@@ -106,7 +107,8 @@ export class RoomsComponent implements OnInit {
       this._service.confirmBedAlloted(this.roomManagement).subscribe((data: RoomManagement)=>{
         console.log(data);
       // this.bill = data;
-      })}
+      })
+    }
   }
   cancelBed(){
     this._router.navigate(['/home']);

@@ -4,7 +4,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse row" id="navbarNav"*ngIf="nav.visible || nav.patient || nav.doctor || nav.admin">
+    <div class="collapse navbar-collapse row" id="navbarNav" *ngIf="nav.visible"  >
         <ul class="navbar-nav">
                        
                 <li class="nav-item active">
@@ -17,24 +17,24 @@
                     <a class="nav-link"  routerLink='vaccination' >Vaccination</a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link"  routerLink='general-appointment'>Test Appointment</a>
+                    <a class="nav-link"  routerLink='general-appointment'>Test App</a>
                 </li>
                 <li class="nav-item"   >
                     <a class="nav-link"  routerLink='userprofile' >Profile</a>
                 </li>
-             
+     
 
-
+    
 
               
             <li class="nav-item" ng-hide="isHidden"  >
-                <a class="nav-link"  routerLink='pending-appointment'>Pending Appointment</a>
+                <a class="nav-link"  routerLink='pending-appointment'>Pending App</a>
             </li>
             <li class="nav-item" >
                 <a class="nav-link"  routerLink='patienthistory' >Bill's</a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link"  routerLink='vaccinependingappointments' >Vacc Appointment's</a>
+                <a class="nav-link"  routerLink='vaccinependingappointments' >Vacc App</a>
             </li>
             <li class="nav-item" >
                 <a class="nav-link"  routerLink='invoice'  >Invoice</a>

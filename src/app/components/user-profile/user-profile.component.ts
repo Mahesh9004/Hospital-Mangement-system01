@@ -28,7 +28,7 @@ export class UserProfileComponent implements OnInit {
 
     this.currentId = +sessionStorage.getItem('id');
  
-   this.nav.show();
+    this.nav.show();
     
     this.currentId = +sessionStorage.getItem('id');
 
@@ -69,7 +69,7 @@ export class UserProfileComponent implements OnInit {
 
   getSecondDate(date: Date): Date {
     this.secondDate = new Date(date);
-    this.secondDate.setDate(this.secondDate.getDate() + 56);
+    this.secondDate.setDate(this.secondDate.getDate() + 45);
     return this.secondDate;
  }
 
@@ -77,15 +77,19 @@ export class UserProfileComponent implements OnInit {
     
   this.http.delete('http://localhost:8080/deleteappointment/'+id)
           .subscribe(() =>  {
-            alert('Covid-19 Test Appointment deleted for Patient With Id '+id);
+            this.getTestAppointmentInfo();
+            alert('Your Covid-19 Test Appointment Canceled Successfully! ');
+
           })
+
   }
 
   deleteVaccineAppointment(id){
     
     this.http.delete('http://localhost:8080/deletevaccineappointment/'+id)
             .subscribe(() =>  {
-              alert('Vaccine Appointment deleted for Patient With Id '+id);
+              this.getVaccineAppointmentInfo();
+              alert('Your Vaccine Appointment Canceled Successfully!');
             })
     }
 }

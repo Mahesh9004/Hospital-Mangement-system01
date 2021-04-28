@@ -36,6 +36,8 @@ export class CountriesComponent implements OnInit {
   ngOnInit(): void {
 
     this.nav.show();
+    
+
    //this.nav.showPatient();
    //this.nav.showDoctor();
    //this.nav.showAdmin();

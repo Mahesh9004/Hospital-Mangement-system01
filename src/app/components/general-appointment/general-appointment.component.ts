@@ -27,12 +27,17 @@ export class GeneralAppointmentComponent implements OnInit {
   
   msg='';
   minDate:Date;
-  constructor(private _router: Router, private _service: RegistrationService,  public nav: NavbarService) { }
+  constructor(private _router: Router, private _service: RegistrationService,  public nav: NavbarService) { 
+    this.flag = false;
+  }
 
   
   ngOnInit(): void {
     
+
     this.nav.show();
+    this.checkAlreadyTaken();
+    
     this.general.userName = sessionStorage.getItem('name');
     
     this.general.patientId = +sessionStorage.getItem('id');
@@ -45,30 +50,31 @@ export class GeneralAppointmentComponent implements OnInit {
   }
 
 
-  checkAlreadyTaken(){
+  checkAlreadyTaken() : boolean{
     this._service.getTestAppointmentInfo(+sessionStorage.getItem('id')).subscribe((data: General[])=>{
       console.log(data);
       this.gen = data;
+      this.flag =true;
+
+      if(this.gen.length != 0){
+        alert("You have already taken the appointment !!")
+        this.flag =false;
+        this._router.navigate(['/home']);
+      }
     })
-
-    this.flag =true;
-
-    if(this.gen.length != 0){
-      alert("You have already taken the appointment !!")
-      this.flag =false;
-      this._router.navigate(['/home']);
-    }
+    return this.flag;
+  
   }
 
   saveAppointment(){
-    this.checkAlreadyTaken();
+  //  this.flag =  this.checkAlreadyTaken();
+   console.log(this.flag);
     if(this.flag){
       this.general.status = "Pending"
       this._service.generalAppointmentFromRemote(this.general).subscribe(
       data=>{
         console.log('appointment received');
 
-       
 
         sessionStorage.setItem('drycough',this.general.dryCough);
         this.q1 = sessionStorage.getItem('drycough');
@@ -88,10 +94,6 @@ export class GeneralAppointmentComponent implements OnInit {
 
         sessionStorage.setItem('date',this.general.appointmentDate);
         this.currentDate = sessionStorage.getItem('date');
-
-        
-
-        
 
         
         this._router.navigate(['/confirmation']);

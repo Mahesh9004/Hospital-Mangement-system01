@@ -16,7 +16,9 @@ export class PatientHistoryComponent implements OnInit {
   constructor(private _service: RegistrationService, public nav: NavbarService) { }
 
   ngOnInit(): void {
+    
     this.nav.show();
+
     this._service.patientBillHistory().subscribe((data: Bill[])=>{
       console.log(data);
       this.bills = data;

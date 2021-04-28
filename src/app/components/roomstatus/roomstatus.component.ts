@@ -4,6 +4,9 @@ import { NavbarService } from 'src/app/services/navbar.service';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Room } from '../room';
 import { RoomManagement } from '../roomManagement';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-roomstatus',
@@ -17,7 +20,7 @@ export class RoomstatusComponent implements OnInit {
   room:Room[];
   roomMan:RoomManagement[];
 
-  constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) { }
+  constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService, private _router: Router) { }
 
   ngOnInit(): void {
     this.nav.show();
@@ -29,5 +32,14 @@ export class RoomstatusComponent implements OnInit {
          })
 
   }
+
+  Discharge(id){
+this.http.delete('http://localhost:8080/dischargePatient/'+id)
+        .subscribe(() =>  {
+          alert('Patient discharge from room no.  '+id);
+          this._router.navigate(['/room-status']);
+        })
+}
+
 
 }

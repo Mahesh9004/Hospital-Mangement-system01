@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   public uemail:any;
   public uid:any;
   public uname:any;
+
   
   
 
@@ -54,7 +55,11 @@ export class LoginComponent implements OnInit {
         this.uname= sessionStorage.getItem('name');
         console.log(this.uname);
 
+
+        
+
         this.nav.show();
+        
         //this.nav.showPatient();
 
         //this.nav.hideDoctor();

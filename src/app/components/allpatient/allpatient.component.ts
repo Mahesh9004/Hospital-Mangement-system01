@@ -21,6 +21,7 @@ export class AllpatientComponent implements OnInit {
 
   ngOnInit(): void {
           this.nav.show();
+          
           this._service.allPatient().subscribe((data: User[])=>{
           this.users = data;
     })

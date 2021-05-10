@@ -28,7 +28,7 @@ export class UserProfileComponent implements OnInit {
 
     this.currentId = +sessionStorage.getItem('id');
  
-    this.nav.show();
+    this.nav.showPatient();
     
     this.currentId = +sessionStorage.getItem('id');
 

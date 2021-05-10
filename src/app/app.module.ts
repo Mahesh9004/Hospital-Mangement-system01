@@ -30,6 +30,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { ConfirmVaccinationComponent } from './components/confirm-vaccination/confirm-vaccination.component';
 import { RoomsComponent } from './components/rooms/rooms.component';
 import { RoomstatusComponent } from './components/roomstatus/roomstatus.component';
+import { PatientsComponent } from './components/patients/patients.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { RoomstatusComponent } from './components/roomstatus/roomstatus.componen
     ConfirmVaccinationComponent,
     RoomsComponent,
     RoomstatusComponent,
+    PatientsComponent,
   ],
   imports: [
     BrowserModule,

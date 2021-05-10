@@ -24,7 +24,8 @@ export class PendingAppointmentComponent implements OnInit {
   constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) {   }
 
   ngOnInit(): void {
-    this.nav.show();
+    this.nav.showDoctor();
+    this.nav.hide();
     
     //this.nav.showPatient();
     //this.nav.showDoctor();

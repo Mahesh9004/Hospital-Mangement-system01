@@ -35,7 +35,8 @@ export class GeneralAppointmentComponent implements OnInit {
   ngOnInit(): void {
     
 
-    this.nav.show();
+    //this.nav.show();
+    this.nav.showPatient();
     this.checkAlreadyTaken();
     
     this.general.userName = sessionStorage.getItem('name');

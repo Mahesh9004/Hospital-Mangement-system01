@@ -19,7 +19,7 @@ export class DoctorregistrationComponent implements OnInit {
   constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
-    this.nav.show();
+    this.nav.showAdmin();
   }
 
 
@@ -27,7 +27,7 @@ export class DoctorregistrationComponent implements OnInit {
     this._service.registerDoctorFromRemote(this.doctor).subscribe(
       data=>{
         console.log('Doctors response received');
-        this._router.navigate(['/logindoctor']);
+        this._router.navigate(['/invoice']);
       },
       error=>{
         console.log('exception occurred');

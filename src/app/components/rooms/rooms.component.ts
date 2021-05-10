@@ -33,7 +33,7 @@ export class RoomsComponent implements OnInit {
     this.bedalottment =true;
     this.delroom =false;
 
-    this.nav.show();
+    this.nav.showAdmin();
     
     this._service.getRoomInfo().subscribe((data: Room[])=>{
       console.log(data);

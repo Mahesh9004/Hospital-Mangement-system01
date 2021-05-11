@@ -23,7 +23,7 @@ export class RoomstatusComponent implements OnInit {
   constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService, private _router: Router) { }
 
   ngOnInit(): void {
-    this.nav.show();
+          this.nav.showAdmin();
           this._service.getRoomInfo().subscribe((data: Room[])=>{
              this.room = data;
           })

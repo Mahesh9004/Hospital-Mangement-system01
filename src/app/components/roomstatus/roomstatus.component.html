@@ -25,6 +25,8 @@
           <td><button class="btn btn-danger" *ngIf="r.status === 'Occupied'" (click)="Discharge(r.id)">Discharge</button></td>
         </tr>
       </tbody>
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </table>
+    <div class="text-center ">
+      <pagination-controls (pageChange)="p = $event"  ></pagination-controls>
+    </div>
   </div>

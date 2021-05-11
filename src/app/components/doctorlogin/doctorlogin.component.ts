@@ -24,6 +24,7 @@ export class DoctorloginComponent implements OnInit {
 
   ngOnInit(): void {
     
+    
   }
 
 
@@ -34,7 +35,7 @@ export class DoctorloginComponent implements OnInit {
 
         
         console.log("Doctor login response received");
-        this._router.navigate(['/home']);
+        this._router.navigate(['/pending-appointment']);
 
 
         sessionStorage.setItem('email',this.doctor.doctorEmail);
@@ -54,9 +55,10 @@ export class DoctorloginComponent implements OnInit {
         console.log(this.ddegree);
 
 
-        this.nav.show();
-        //this.nav.showDoctor();
-
+        //this.nav.show();
+        this.nav.hide();
+        this.nav.showDoctor();
+        
         //this.nav.hidePatient();
         //this.nav.hideAdmin();
 

@@ -22,6 +22,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { ConfirmVaccinationComponent } from './components/confirm-vaccination/confirm-vaccination.component';
 import { RoomsComponent } from './components/rooms/rooms.component';
 import { RoomstatusComponent } from './components/roomstatus/roomstatus.component';
+import { PatientsComponent } from './components/patients/patients.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: 'confirmvaccination', component: ConfirmVaccinationComponent},
   {path: 'rooms', component: RoomsComponent},
   {path: 'room-status', component: RoomstatusComponent},
+  {path: 'all-patients', component: PatientsComponent},
 ];
 
 @NgModule({

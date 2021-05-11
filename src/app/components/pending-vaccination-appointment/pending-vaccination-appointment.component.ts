@@ -16,7 +16,8 @@ export class PendingVaccinationAppointmentComponent implements OnInit {
   constructor(private _service: RegistrationService, public nav: NavbarService) { }
 
   ngOnInit(): void {
-    this.nav.show();
+    this.nav.hide();
+    this.nav.showDoctor();
     
     this._service.vaccinePendingAppointments().subscribe((data: Vaccine[])=>{
       console.log(data);

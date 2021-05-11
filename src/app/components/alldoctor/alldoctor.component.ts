@@ -16,7 +16,7 @@ export class AlldoctorComponent implements OnInit {
   constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) { }
 
   ngOnInit(): void {
-    this.nav.show();
+          this.nav.showAdmin();
           this._service.allDoctor().subscribe((data: Doctor[])=>{
           this.doctors = data;
     })

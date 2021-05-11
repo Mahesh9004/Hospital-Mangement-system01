@@ -17,7 +17,7 @@ export class PatientHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.nav.show();
+    this.nav.showAdmin();
 
     this._service.patientBillHistory().subscribe((data: Bill[])=>{
       console.log(data);

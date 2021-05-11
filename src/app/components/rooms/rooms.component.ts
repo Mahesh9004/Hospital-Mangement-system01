@@ -39,7 +39,7 @@ export class RoomsComponent implements OnInit {
       console.log(data);
       this.rooms = data;
     })
-
+    this.checkAlreadyTaken();
   }
 
   bedalot(){
@@ -104,7 +104,7 @@ export class RoomsComponent implements OnInit {
   }
   
   confirmBed(){
-    this.checkAlreadyTaken();
+    
     this.roomManagement.admitDate = new Date();
     if(this.flag){
       this.roomManagement.patientName = this.gen[0].userName;

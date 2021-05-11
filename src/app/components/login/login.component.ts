@@ -6,7 +6,6 @@ import { fromEventPattern } from 'rxjs';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { User } from 'src/user';
 import { NavbarService } from 'src/app/services/navbar.service';
-//import { Home } from 'src/app/components/home/home.component';
 
 
 @Component({
@@ -24,13 +23,11 @@ export class LoginComponent implements OnInit {
   public uname:any;
 
   
-  
 
   constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
    
-    
   }
 
   
@@ -56,15 +53,8 @@ export class LoginComponent implements OnInit {
         console.log(this.uname);
 
 
-        
 
-        this.nav.show();
-        
-        //this.nav.showPatient();
-
-        //this.nav.hideDoctor();
-        //this.nav.hideAdmin();
-
+        this.nav.showPatient();
 
       },
       error => {console.log("exception occurred")

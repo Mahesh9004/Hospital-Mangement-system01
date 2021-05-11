@@ -22,7 +22,8 @@ export class VaccinationComponent implements OnInit {
   constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
-    this.nav.show();
+    //this.nav.show();
+    this.nav.showPatient();
     
     this.checkAlreadyTaken();
     this.vaccine.patientId = +sessionStorage.getItem('id');

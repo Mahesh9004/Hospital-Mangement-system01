@@ -15,6 +15,7 @@ export class AdminloginComponent implements OnInit {
   
   public email:any;
   public password:any;
+  
   constructor( private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {
@@ -23,21 +24,21 @@ export class AdminloginComponent implements OnInit {
 
   loginAdmin(){
 
-    this.nav.show();
+    //this.nav.show();
       // this.nav.showAdmin();
       // this.nav.hidePatient();
       // this.nav.hideDoctor();
-
+      
       const email = 'admin@gmail.com'; //this.form.value.userName;
       const password = 'admin'; //this.form.value.passwd;
       if(email === 'admin@gmail.com' && password === 'admin'){
         console.log(email, password);
-        this._router.navigate(['home']);
+        this._router.navigate(['invoice']);
       } else{
         alert('Invalid Credentials!');
       }
 
-     
+      
       
      
       

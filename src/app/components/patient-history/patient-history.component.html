@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <h2 class="text-center" style="color: gray;">All Patient's</h2>
+    <h2 class="text-center" style="color: gray;">Patient's Invoice History</h2>
     <table class="table table-striped ">
       <thead>
           <tr class="text-primary">
@@ -20,6 +20,8 @@
           <td>{{ bill.totalAmount}}</td>
         </tr>
       </tbody>
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </table>
+    <div class="text-center ">
+      <pagination-controls (pageChange)="p = $event"  ></pagination-controls>
+    </div>
   </div>

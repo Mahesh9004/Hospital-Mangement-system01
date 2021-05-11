@@ -9,7 +9,7 @@
         [class.is-invalid]="email.invalid && email.touched"
         pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
         >
-        <!--<small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required!</small>-->
+       
 
         <div *ngIf="email.errors && (email.invalid && email.touched)"> 
             <small class="text-danger" *ngIf="email.errors.required">Email is Required!</small>

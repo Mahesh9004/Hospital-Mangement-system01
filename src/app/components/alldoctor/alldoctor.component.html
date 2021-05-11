@@ -14,7 +14,7 @@
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let doctor of doctors | paginate: { itemsPerPage: 1, currentPage: p }">
+        <tr *ngFor="let doctor of doctors | paginate: { itemsPerPage: 8, currentPage: p }">
           <td>{{ doctor.id }}</td>
           <td>{{ doctor.doctorName | titlecase  }}</td>
           <td>{{ doctor.doctorEmail }}</td>
@@ -24,7 +24,8 @@
        
         </tr>
       </tbody>
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
-
     </table>
+     <div class="text-center ">
+      <pagination-controls (pageChange)="p = $event"  ></pagination-controls>
+     </div>
   </div>

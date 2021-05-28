@@ -16,6 +16,7 @@ export class DoctorregistrationComponent implements OnInit {
 
   doctor = new Doctor();
   msg=" ";
+  minDate:Date;
   constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
 
   ngOnInit(): void {

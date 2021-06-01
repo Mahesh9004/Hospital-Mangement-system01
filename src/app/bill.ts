@@ -3,6 +3,7 @@ export class Bill {
     patientId: Number;
     patientName: string;
 	patientDescription: string;
+    doi: string;
 	totalAmount: number;
     constructor(){}
 }

@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
   user = new User();
   msg='';
   public uname:any;
+  minDate:Date;
   //username: any;
   constructor(private _service: RegistrationService, private _router: Router) { }
 

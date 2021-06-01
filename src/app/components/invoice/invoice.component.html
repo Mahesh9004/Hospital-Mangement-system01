@@ -87,6 +87,21 @@
                       </div>
                   </div>
                   <br>
+
+
+
+
+                <div class="form-floating">
+                  <input class="form-control" type="date" [min]="minDate | date:'yyyy-MM-dd'"  #doi="ngModel" name="doi"  [(ngModel)]="bill.doi" required
+                    [class.is-invalid]="doi.invalid && doi.touched">
+                  <label for="doi">Date Of Invoice</label>
+                  <div *ngIf="doi.invalid && doi.touched"> 
+                    <small class="text-danger" *ngIf="doi.errors.required">Date of Invoice is Required!</small>
+                    </div>
+                </div>
+
+                <br>
+
                   
                         <div class="form-floating mb-3" >
                           <input type="text" class="form-control" id="amount" name="amount" placeholder="  Enter Amount"  [(ngModel)]="bill.totalAmount"  #amount="ngModel" required [class.is-invalid]="amount.invalid && amount.touched">

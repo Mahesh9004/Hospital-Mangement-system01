@@ -13,6 +13,7 @@ export class InvoiceComponent implements OnInit {
 
   bill = new Bill();
   text : string;
+  minDate:Date;
   constructor(private _service: RegistrationService,public nav: NavbarService ) { }
 
   ngOnInit(): void {

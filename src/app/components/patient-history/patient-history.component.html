@@ -6,6 +6,7 @@
             <th>Id</th>
             <th>PatientName</th>
             <th>PatientDescription</th>
+            <th>Date Of Invoice</th>
             <th>TotalAmount</th>
            
           
@@ -17,6 +18,7 @@
           <td>{{ bill.id  }}</td>
           <td>{{ bill.patientName | titlecase  }}</td>
           <td>{{ bill.patientDescription }}</td>
+          <td>{{ bill.doi}}</td>
           <td>{{ bill.totalAmount}}</td>
         </tr>
       </tbody>

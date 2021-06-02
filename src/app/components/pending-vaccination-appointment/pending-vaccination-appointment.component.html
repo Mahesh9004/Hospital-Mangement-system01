@@ -3,26 +3,22 @@
     <table class="table table-striped ">
       <thead>
           <tr class="text-primary">
-            <th>Id</th>
+            <th>Vaccine Id</th>
+            <th>Patient Name</th>
             <th>Date</th>
+            <th>Time</th>
             <th>Adult Count</th>
             <th>Child Count</th>
-            <th>Time</th>
-            <th>Patient Name</th>
-            
-           
-           
           </tr>
       </thead>
       <tbody>
         <tr *ngFor="let vac of vaccine | paginate: { itemsPerPage: 5, currentPage: p }">
           <td>{{ vac.id  }}</td>
-          <td>{{ vac.date  }}</td>
-          <td>{{ vac.adultCount }}</td>
-          <td>{{ vac.childCount}}</td>
-          <td>{{ vac.time}}</td>
           <td>{{ vac.patientName }}</td>
-          
+          <td>{{ vac.date  }}</td>
+          <td>{{ vac.time}}</td>
+          <td>{{ vac.adultCount }}</td>
+          <td>{{ vac.childCount}}</td>          
         </tr>
       </tbody>
     </table>

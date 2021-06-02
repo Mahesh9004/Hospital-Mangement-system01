@@ -43,7 +43,7 @@
                 <a class="nav-link"  routerLink='patienthistory'>Invoice History</a>
             </li>
             <li class="nav-item"  *ngIf="nav.admin">
-                <a class="nav-link"  routerLink='rooms' >Room's</a>
+                <a class="nav-link"  routerLink='rooms' >Rooms</a>
             </li>
             <li class="nav-item"   *ngIf="nav.admin">
                 <a class="nav-link"  routerLink='room-status' >Room Status</a>
@@ -62,9 +62,15 @@
         </ul>  
     </div>
 
-    <div class="ml-auto text-primary"  *ngIf="nav.visible || nav.doctor || nav.patient">
+    <div class="ml-auto text-primary"  *ngIf="nav.visible || nav.patient">
          Welcome, {{ currentName | titlecase }}   
-    </div>&nbsp;
+    </div>
+    <div class="ml-auto text-primary"  *ngIf="nav.doctor">
+        Welcome, Dr. {{ currentName | titlecase }}   
+   </div>
+   <div class="ml-auto text-primary"  *ngIf="nav.admin">
+    Welcome, Administrator   
+</div>&nbsp;
     <div class="ml-auto"  *ngIf="nav.visible || nav.patient || nav.doctor || nav.admin">
         <button type="submit" class="btn btn-primary btn-sm" style="border-radius: 20px;" (click)="logOut()">Logout</button>
    </div>

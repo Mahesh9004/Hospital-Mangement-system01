@@ -73,12 +73,16 @@
                   <h3 style="background-color:#357EBD; color:#FFF; text-align:center;">INVOICE</h3>
                   <h6 class="card-title text-center">Covid-19 HMS</h6>
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" [(ngModel)]="bill.patientName"  #name="ngModel" required [class.is-invalid]="name.invalid && name.touched">
-                    <label for="name">Patient Name</label>
+                    <input type="text" class="form-control" id="patientId" (change)="getName($event)" name="patientId"  [(ngModel)]="bill.patientId"  #name="ngModel" required [class.is-invalid]="name.invalid && name.touched">
+                    <label for="patientId">Patient ID</label>
                     <div *ngIf="name.invalid && name.touched"> 
-                      <small class="text-danger" *ngIf="name.errors.required">Patient Name is Required!</small>
+                      <small class="text-danger" *ngIf="name.errors.required">Patient ID is Required!</small>
                       </div>
                   </div>
+                  <div class="form-floating mb-3" *ngIf="user">
+                    <input type="text" class="form-control"  id="patientName" name="patientName" [disabled]="true" [ng-value]="user.userName" placeholder="Enter patient Name" ngModel="{{user.userName}}" required>
+                     <label for="patientName">Patient Name</label>
+                 </div>
                   <div class="form-floating">
                     <textarea class="form-control" placeholder="Description" id="description" name="description" style="height: 100px"  [(ngModel)]="bill.patientDescription"  #description="ngModel" required [class.is-invalid]="description.invalid && description.touched"></textarea>
                     <label for="description">Patient Description</label>

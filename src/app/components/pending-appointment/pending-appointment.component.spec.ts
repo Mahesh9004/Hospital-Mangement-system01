@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PendingAppointmentComponent } from './pending-appointment.component';
@@ -8,7 +9,9 @@ describe('PendingAppointmentComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PendingAppointmentComponent ]
+      declarations: [ PendingAppointmentComponent ],
+      imports: [ HttpClientTestingModule ],
+      providers: [PendingAppointmentComponent]
     })
     .compileComponents();
   }));

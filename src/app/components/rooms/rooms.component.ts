@@ -117,7 +117,7 @@ export class RoomsComponent implements OnInit {
       })}
   }
   cancelBed(){
-    this._router.navigate(['/home']);
+    this._router.navigate(['/rooms']);
   }
 
   confirmAddRoom(){

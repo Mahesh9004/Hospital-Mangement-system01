@@ -66,7 +66,7 @@ export class GeneralAppointmentComponent implements OnInit {
     return this.flag;
   
   }
-
+ 
   saveAppointment(){
   //  this.flag =  this.checkAlreadyTaken();
    console.log(this.flag);

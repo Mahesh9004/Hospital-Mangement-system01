@@ -108,6 +108,7 @@ export class RoomsComponent implements OnInit {
     this.roomManagement.admitDate = new Date();
     if(this.flag){
       this.roomManagement.patientName = this.gen[0].userName;
+      this.roomManagement.admitDate = new Date();
       this._service.confirmBedAlloted(this.roomManagement).subscribe((data: RoomManagement)=>{
         console.log(data);
       // this.bill = data;

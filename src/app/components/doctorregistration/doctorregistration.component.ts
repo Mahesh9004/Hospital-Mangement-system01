@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { Doctor } from 'src/doctor';
 import { Router } from '@angular/router';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { NewdoctorresgisterService } from 'src/app/services/newdoctorresgister.service';
+import { Inewdoctor } from 'src/app/inewdoctor';
 
 
 
@@ -14,29 +16,36 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class DoctorregistrationComponent implements OnInit {
 
-  doctor = new Doctor();
-  msg=" ";
-  minDate:Date;
-  constructor(private _service: RegistrationService, private _router: Router, public nav: NavbarService) { }
+  
+  emailid:FormControl=new FormControl("");
+  doctorname:FormControl=new FormControl("");
+  doctordegree:FormControl=new FormControl("");
+  mobilenumber:FormControl=new FormControl("");
+  dateofbirth:FormControl=new FormControl("");
+  address:FormControl=new FormControl("");
+  password:FormControl=new FormControl("");
+  confirmpassword:FormControl=new FormControl("");
+  registerServices: any;
+
+
+  constructor( private newdoctorregister:NewdoctorresgisterService) { }
 
   ngOnInit(): void {
-    this.nav.showAdmin();
   }
-
-
-  registerDoctor(){
-    this._service.registerDoctorFromRemote(this.doctor).subscribe(
-      data=>{
-        console.log('Doctors response received');
-        this._router.navigate(['/invoice']);
-      },
-      error=>{
-        console.log('exception occurred');
-        this.msg= error.error;
-        
-      }
-    )
-  }
+    save(){
+      let register:Inewdoctor={
+        emailid: this.emailid.value,
+        doctorname: this.doctorname.value,
+        doctordegree: this.doctordegree.value,
+        mobilenumber: this.mobilenumber.value,
+        dateofbirth: this.dateofbirth.value,
+        address:this.address.value,
+        password: this.password.value,
+        confirmpassword: this.confirmpassword.value
+      };
+      alert("Saved data")
+      this.newdoctorregister.addRegister(register);
+    }
 
 
 }

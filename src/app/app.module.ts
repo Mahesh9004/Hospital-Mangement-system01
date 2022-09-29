@@ -13,7 +13,7 @@ import { VaccinationComponent } from './components/vaccination/vaccination.compo
 import { GeneralAppointmentComponent } from './components/general-appointment/general-appointment.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PendingAppointmentComponent } from './components/pending-appointment/pending-appointment.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
@@ -66,6 +66,7 @@ import { PatientsComponent } from './components/patients/patients.component';
     HttpClientModule,
     GoogleChartsModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxPaginationModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

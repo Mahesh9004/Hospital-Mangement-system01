@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { RegistrationService } from 'src/app/services/registration.service';
 import { NavbarService } from 'src/app/services/navbar.service';
 import { Doctor } from 'src/doctor';
+import { Inewdoctor } from 'src/app/inewdoctor';
+import { NewdoctorresgisterService } from 'src/app/services/newdoctorresgister.service';
 
 @Component({
   selector: 'app-alldoctor',
@@ -11,15 +13,12 @@ import { Doctor } from 'src/doctor';
 })
 export class AlldoctorComponent implements OnInit {
 
-  doctors : Doctor[];
-  p : number = 1;
-  constructor(private _service: RegistrationService, private http: HttpClient, public nav: NavbarService) { }
+  doctor!:Inewdoctor[];
+  constructor( private getAllDoctor:NewdoctorresgisterService) { }
 
   ngOnInit(): void {
-          this.nav.showAdmin();
-          this._service.allDoctor().subscribe((data: Doctor[])=>{
-          this.doctors = data;
+    this.getAllDoctor.getAlldoctor().subscribe(skills=>{
+      this.doctor=skills;
     })
   }
-
 }
